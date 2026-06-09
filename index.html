@@ -55,8 +55,10 @@ nav{
 }
 
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none;}
-.nav-links a{font-size:0.85rem;font-weight:500;color:var(--off);transition:color .2s;white-space:nowrap}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--off);transition:color .2s;white-space:nowrap;display:flex;align-items:center;gap:6px;}
 .nav-links a:hover{color:#fff}
+.nav-links a svg{transition:color .2s}
+.nav-links a:hover svg{color:var(--orange)}
 .nav-cta{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .btn-primary-sm{padding:8px 16px;background:var(--orange);border-radius:8px;font-size:0.8rem;font-weight:600;color:#000;transition:all .2s;white-space:nowrap}
 .btn-primary-sm:hover{background:#ea6a00;transform:translateY(-2px)}
@@ -106,12 +108,26 @@ nav{
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s var(--ease) .4s both}
 
 .btn-primary-lg{
-  display:inline-flex;align-items:center;gap:8px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:14px 32px;background:var(--orange);border-radius:10px;
   font-size:0.95rem;font-weight:600;color:#000;
   transition:all .25s var(--ease);font-family:'DM Sans',sans-serif;
 }
 .btn-primary-lg:hover{background:#ea6a00;transform:translateY(-3px);box-shadow:0 12px 32px rgba(249,115,22,.3)}
+.btn-secondary-lg{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 32px;background:rgba(255,255,255,.03);
+  border:1px solid var(--border);border-radius:10px;
+  font-size:0.95rem;font-weight:500;color:#fff;
+  transition:all .25s var(--ease);font-family:'DM Sans',sans-serif;
+  backdrop-filter:blur(8px);
+}
+.btn-secondary-lg:hover{background:rgba(255,255,255,.08);border-color:var(--orange);color:var(--orange);transform:translateY(-3px)}
+
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;align-items:center;width:100%}
+  .btn-primary-lg, .btn-secondary-lg{width:100%}
+}
 
 /* ── COMMON SECTION BASE ── */
 .section{padding:clamp(60px,8vw,110px) clamp(16px,5vw,60px);position:relative}
@@ -169,6 +185,8 @@ nav{
 }
 .btn-outline:hover{border-color:var(--orange);color:var(--orange);background:rgba(249,115,22,.05)}
 
+.catalog-more{display:flex;justify-content:center;margin-top:48px}
+
 @media(max-width:980px){.catalog-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.catalog-grid{grid-template-columns:1fr}}
 
@@ -197,8 +215,16 @@ nav{
   font-size:0.8rem;font-weight:800;color:var(--orange);letter-spacing:.05em;
 }
 
+/* ── CTA BAND ── */
+.cta-band{background:linear-gradient(135deg,rgba(249,115,22,.08) 0%,rgba(168,85,247,.06) 100%);border-top:1px solid rgba(249,115,22,.15);border-bottom:1px solid rgba(249,115,22,.1);padding:70px clamp(16px,5vw,60px);text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(249,115,22,.07) 0%,transparent 70%);pointer-events:none}
+.cta-band h2{font-family:'Outfit',sans-serif;font-size:clamp(1.9rem,4.5vw,3.3rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;position:relative;z-index:1}
+.cta-band h2 span{color:var(--orange)}
+.cta-band p{font-size:1rem;color:var(--off);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
 /* ── FOOTER ── */
-footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px clamp(16px,5vw,60px) 30px}
+footer{background:#050608;padding:60px clamp(16px,5vw,60px) 30px}
 .footer-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--border)}
 .footer-inner h3{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.01em;margin-bottom:16px;color:#fff}
 .footer-inner p{font-size:0.9rem;color:var(--off);line-height:1.7;max-width:380px}
@@ -209,7 +235,9 @@ footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px
 .contact-info a{color:#fff;transition:color .2s;font-weight:500}
 .contact-info a:hover{color:var(--orange)}
 
-.footer-bottom{max-width:var(--max);margin:24px auto 0;text-align:center;font-size:0.75rem;color:rgba(255,255,255,.3);letter-spacing:.04em}
+.footer-bottom{max-width:var(--max);margin:24px auto 0;text-align:center;font-size:0.75rem;color:rgba(255,255,255,.3);letter-spacing:.04em;display:flex;flex-direction:column;gap:8px}
+.footer-bottom a{color:rgba(255,255,255,.5);transition:color .2s;text-decoration:underline;text-decoration-color:rgba(255,255,255,.1)}
+.footer-bottom a:hover{color:var(--orange);text-decoration-color:var(--orange)}
 
 @media(max-width:768px){.footer-inner{grid-template-columns:1fr}}
 
@@ -232,6 +260,12 @@ footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px
   <ul class="nav-links">
     <li><a href="#katalogs">Iekārtas</a></li>
     <li><a href="#info">Informācija</a></li>
+    <li>
+      <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">
+        Pilnais katalogs Bratus.lv 
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      </a>
+    </li>
   </ul>
   <div class="nav-cta">
     <a href="#kontakti" class="btn-primary-sm">Sazināties →</a>
@@ -250,6 +284,10 @@ footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px
       <a href="#katalogs" class="btn-primary-lg">
         Apskatīt modeļus
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-secondary-lg">
+        Skatīt bratus.lv 
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
       </a>
     </div>
   </div>
@@ -375,6 +413,13 @@ footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px
         <a href="wattsan-2040.html" class="btn-outline">Skatīt vairāk</a>
       </div>
     </div>
+    
+    <div class="catalog-more sr">
+      <a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-secondary-lg">
+        Apskatīt pilno katalogu Bratus.lv
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -409,6 +454,17 @@ footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px
   </div>
 </section>
 
+<div class="cta-band">
+  <h2 class="sr">Vēlaties uzzināt vairāk<br>par <span>BRATUS</span>?</h2>
+  <p class="sr sr-d1">Mūsu pilnā mājaslapa piedāvā ne tikai CNC frēzes, bet arī lāzergriezējus, metālapstrādes iekārtas un daudz ko citu.</p>
+  <div class="cta-band-btns sr sr-d2">
+    <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">
+      Atvērt bratus.lv
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</div>
+
 <footer id="kontakti">
   <div class="footer-inner">
     <div>
@@ -438,6 +494,7 @@ footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px
   </div>
   <div class="footer-bottom">
     <p>© <span id="year"></span> SIA Bratus (cncfrezes.lv). Visas tiesības aizsargātas.</p>
+    <p>Apmeklējiet mūsu pilno preču katalogu un pakalpojumus vietnē <a href="https://bratus.lv" target="_blank" rel="noopener noreferrer">bratus.lv</a>.</p>
   </div>
 </footer>
 
