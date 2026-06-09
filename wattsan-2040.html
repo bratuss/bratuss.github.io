@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wattsan 2040 M1 | CNC Frēzes un Iekārtas | Bratus</title>
+<meta name="description" content="Gigantiska industriālā CNC frēze Wattsan 2040 M1 ar 2000x4000 mm darba laukumu un 6 kW vārpstu. Maksimāla veiktspēja vislielākajiem projektiem.">
+<link rel="canonical" href="https://cncfrezes.lv/2040.html">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#08090c;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+:root{
+  --orange: #f97316;
+  --cyan: #22d3ee;
+  --violet: #a855f7;
+  --off: #a0a8b8;
+  --surface: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --max: 1160px;
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(16px,4vw,52px);
+  background:rgba(8,9,12,0.82);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  gap:12px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo-text{
+  font-family:'Outfit',sans-serif;
+  font-weight:900;
+  font-size:1.25rem;
+  letter-spacing:-0.02em;
+  background:linear-gradient(180deg,#ffffff 0%,#a0a8b8 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  white-space:nowrap;
+}
+.nav-logo-text span{
+  background:linear-gradient(90deg,var(--orange),var(--violet));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none;}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--off);transition:color .2s;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+.nav-links a:hover{color:#fff}
+.nav-links a svg{transition:color .2s}
+.nav-links a:hover svg{color:var(--orange)}
+
+.nav-cta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.btn-primary-sm{padding:8px 16px;background:var(--orange);border-radius:8px;font-size:0.8rem;font-weight:600;color:#000;transition:all .2s;white-space:nowrap}
+.btn-primary-sm:hover{background:#ea6a00;transform:translateY(-2px)}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+}
+
+/* ── PRODUCT SECTION ── */
+.product-section{
+  padding:120px clamp(16px,5vw,60px) 80px;
+  position:relative;
+  min-height:100vh;
+}
+.product-section::before{
+  content:'';position:absolute;top:0;left:30%;transform:translateX(-50%);
+  width:800px;height:600px;
+  background:radial-gradient(ellipse 50% 50% at 50% 30%,rgba(249,115,22,.12) 0%,transparent 70%);
+  pointer-events:none;z-index:-1;
+}
+.section-max{max-width:var(--max);margin:0 auto}
+
+/* Breadcrumbs */
+.breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.85rem;color:var(--off);margin-bottom:40px}
+.breadcrumb a{transition:color .2s}
+.breadcrumb a:hover{color:#fff}
+.breadcrumb svg{width:14px;height:14px;color:var(--orange)}
+.breadcrumb span{color:#fff;font-weight:600}
+
+/* Grid Layout */
+.product-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;
+  align-items:start;
+}
+
+/* Image Side */
+.product-image-wrap{
+  position:sticky;top:100px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:40px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 30px 60px rgba(0,0,0,0.4);
+  overflow:hidden;
+}
+.product-image-wrap::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at center, rgba(255,255,255,0.06) 0%, transparent 60%);
+  pointer-events:none;
+}
+.product-image-wrap img{
+  max-width:100%;height:auto;
+  filter:drop-shadow(0 20px 30px rgba(0,0,0,0.6));
+  transition:transform .5s var(--ease);
+}
+.product-image-wrap:hover img{transform:scale(1.05)}
+
+/* Info Side */
+.product-info{display:flex;flex-direction:column}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:0.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;width:fit-content;background:rgba(249,115,22,.1);padding:6px 12px;border-radius:6px;border:1px solid rgba(249,115,22,.2)}
+.product-title{font-family:'Outfit',sans-serif;font-size:clamp(2.5rem,5vw,3.8rem);font-weight:800;letter-spacing:-0.02em;line-height:1.05;margin-bottom:24px}
+.product-desc{font-size:1.05rem;color:var(--off);line-height:1.75;margin-bottom:32px}
+
+/* Specs */
+.specs-list{list-style:none;display:flex;flex-direction:column;margin-bottom:40px;border-top:1px solid var(--border)}
+.specs-list li{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);font-size:0.95rem}
+.specs-list .lbl{color:var(--off)}
+.specs-list .val{font-weight:600;color:#fff;text-align:right}
+
+/* Trust Marks */
+.trust-marks{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+.trust-mark{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:0.85rem;font-weight:500;color:#fff;
+}
+.trust-mark svg{width:16px;height:16px;color:var(--orange)}
+
+/* Action Buttons */
+.action-buttons{display:flex;flex-wrap:wrap;gap:16px}
+.btn-primary-lg{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 32px;background:var(--orange);border-radius:10px;
+  font-size:0.95rem;font-weight:600;color:#000;
+  transition:all .25s var(--ease);font-family:'DM Sans',sans-serif;
+  border:1px solid var(--orange);
+}
+.btn-primary-lg:hover{background:#ea6a00;transform:translateY(-3px);box-shadow:0 12px 32px rgba(249,115,22,.3)}
+.btn-secondary-lg{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 32px;background:rgba(255,255,255,.03);
+  border:1px solid var(--border);border-radius:10px;
+  font-size:0.95rem;font-weight:500;color:#fff;
+  transition:all .25s var(--ease);font-family:'DM Sans',sans-serif;
+}
+.btn-secondary-lg:hover{background:rgba(255,255,255,.08);border-color:var(--orange);color:var(--orange);transform:translateY(-3px)}
+
+@media(max-width:980px){
+  .product-grid{grid-template-columns:1fr;gap:40px}
+  .product-image-wrap{position:relative;top:0;padding:20px}
+}
+@media(max-width:520px){
+  .action-buttons{flex-direction:column}
+  .btn-primary-lg, .btn-secondary-lg{width:100%}
+  .specs-list li{flex-direction:column;align-items:flex-start;gap:6px}
+  .specs-list .val{text-align:left;color:var(--orange)}
+}
+
+/* ── FOOTER ── */
+footer{background:#050608;border-top:1px solid rgba(249,115,22,.15);padding:60px clamp(16px,5vw,60px) 30px}
+.footer-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.footer-inner h3{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:-0.01em;margin-bottom:16px;color:#fff}
+.footer-inner p{font-size:0.9rem;color:var(--off);line-height:1.7;max-width:380px}
+
+.contact-info{list-style:none;display:flex;flex-direction:column;gap:14px}
+.contact-info li{display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:var(--off)}
+.contact-info li svg{width:18px;height:18px;color:var(--orange);flex-shrink:0;margin-top:2px}
+.contact-info a{color:#fff;transition:color .2s;font-weight:500}
+.contact-info a:hover{color:var(--orange)}
+
+.footer-bottom{max-width:var(--max);margin:24px auto 0;text-align:center;font-size:0.75rem;color:rgba(255,255,255,.3);letter-spacing:.04em;display:flex;flex-direction:column;gap:8px}
+.footer-bottom a{color:rgba(255,255,255,.5);transition:color .2s;text-decoration:underline;text-decoration-color:rgba(255,255,255,.1)}
+.footer-bottom a:hover{color:var(--orange);text-decoration-color:var(--orange)}
+
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr}}
+
+/* ── SCROLL REVEAL ANIMATIONS ── */
+.sr{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.sr.in{opacity:1;transform:translateY(0)}
+.sr-d1{transition-delay:.08s}
+.sr-d2{transition-delay:.16s}
+.sr-d3{transition-delay:.24s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="index.html" class="nav-logo-text">CNC<span>frēzes</span>.lv</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html#katalogs">Iekārtas</a></li>
+    <li>
+      <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">
+        Apmeklēt Bratus.lv
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      </a>
+    </li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#kontakti" class="btn-primary-sm">Sazināties →</a>
+  </div>
+</nav>
+
+<section class="product-section">
+  <div class="section-max">
+    
+    <div class="breadcrumb sr">
+      <a href="index.html">Sākums</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <a href="index.html#katalogs">Katalogs</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      <span>Wattsan 2040 M1</span>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-image-wrap sr sr-d1">
+        <img src="https://wattsan.com/wp-content/uploads/20402-1-1-1-1.png" alt="Wattsan 2040 M1 Industriālā CNC frēze">
+      </div>
+      
+      <div class="product-info">
+        <div class="sr sr-d1">
+          <div class="tag">M1 Sērija</div>
+          <h1 class="product-title">Wattsan 2040 M1</h1>
+          <p class="product-desc">Milzīga industriālā CNC frēze ar darba laukumu 2000 x 4000 mm. Šis ir sērijas maksimālais standarta izmērs, kas paredzēts vissmagākajiem un lielākajiem projektiem. Ar augstas veiktspējas 6 kW vārpstu, izturīgu rāmi (1370 kg) un klasisko RichAuto A11 vadības sistēmu, iekārta ir ideāli piemērota masveida lokšņu materiālu griešanai, lielformāta reklāmai, fasādēm un industriālai ražošanai.</p>
+        </div>
+        
+        <ul class="specs-list sr sr-d2">
+          <li><span class="lbl">Darba laukums</span><span class="val">2000 x 4000 mm</span></li>
+          <li><span class="lbl">Vārpstas jauda</span><span class="val">6 kW</span></li>
+          <li><span class="lbl">Kontrolieris</span><span class="val">RichAuto A11</span></li>
+          <li><span class="lbl">Iekārtas izmērs</span><span class="val">4850 x 2890 x 2000 mm</span></li>
+          <li><span class="lbl">Svars</span><span class="val">1370 kg</span></li>
+        </ul>
+
+        <div class="trust-marks sr sr-d3">
+          <div class="trust-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Oficiāla Garantija
+          </div>
+          <div class="trust-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Serviss Latvijā
+          </div>
+          <div class="trust-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Apmācības iekļautas
+          </div>
+        </div>
+
+        <div class="action-buttons sr sr-d3">
+          <a href="#kontakti" class="btn-primary-lg">
+            Saņemt piedāvājumu
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-secondary-lg">
+            Skatīt bratus.lv
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<footer id="kontakti">
+  <div class="footer-inner">
+    <div>
+      <h3>SIA Bratus</h3>
+      <p>Oficiālais Wattsan CNC iekārtu izplatītājs Latvijā. Nodrošinām piegādi, uzstādīšanu, personāla apmācību un pilnu tehnisko servisu.</p>
+    </div>
+    <div>
+      <ul class="contact-info">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A2 2 0 0 1 2.11 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81A2 2 0 0 1 7.36 10.7L6.09 11.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+37124424434">+371 24 424 434</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:sales@bratus.lv">sales@bratus.lv</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Dārznieku iela 42, Ķekava, LV-2123</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Reģ. nr. 40203628316</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> SIA Bratus. Visas tiesības aizsargātas.</p>
+    <p>Apmeklējiet mūsu pilno preču katalogu un pakalpojumus vietnē <a href="https://bratus.lv" target="_blank" rel="noopener noreferrer">bratus.lv</a>.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)} });
+  },{threshold:0.1});
+  document.querySelectorAll('.sr').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
