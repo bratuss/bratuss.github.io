@@ -360,9 +360,17 @@ img{display:block;max-width:100%}
 .feature-card-icon svg{width:18px;height:18px;color:var(--accent)}
 .feature-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:5px}
 .feature-card p{font-size:.74rem;color:var(--ink2);line-height:1.55;font-weight:300}
-.materials-list{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
-.material-tag{padding:5px 10px;background:var(--bg2);border:1px solid var(--border);font-size:.62rem;color:var(--ink2);letter-spacing:.04em;transition:all .2s;text-transform:uppercase}
-.material-tag:hover{border-color:var(--accent);color:var(--accent)}
+.materials-slider{position:relative;display:flex;align-items:center;gap:0;max-width:100%}
+.materials-arrow{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;color:var(--ink);font-size:1.2rem;line-height:1;z-index:2}
+.materials-arrow:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 2px 12px rgba(230,60,50,.15)}
+.materials-arrow svg{width:14px;height:14px}
+.materials-track-wrap{overflow:hidden;flex:1;margin:0 4px}
+.materials-track{display:flex;gap:20px;transition:transform .4s var(--ease);padding:8px 4px;will-change:transform}
+.material-card{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:10px;width:100px;cursor:default}
+.material-img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid var(--border);background:var(--bg2);transition:all .25s}
+.material-card:hover .material-img{border-color:var(--accent);transform:scale(1.08)}
+.material-name{font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink2);font-weight:500;text-align:center}
+@media(max-width:600px){.material-card{width:80px}.material-img{width:64px;height:64px}.materials-track{gap:14px}}
 .desc-text{font-size:.88rem;color:var(--ink2);line-height:1.8;font-weight:300;max-width:780px}
 footer{background:var(--ink);color:#fff;padding:48px var(--gutter) 24px;margin-top:0}
 .footer-grid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:32px}
@@ -389,7 +397,7 @@ SUBNAV = '<div class="nav-sub"><div class="nav-sub-inner"><span>CNC Frēzes:</sp
 
 FOOTER = '''<footer><div class="footer-grid"><div class="footer-brand"><img src="https://wattsan.com/wp-content/uploads/wattsan_logo-1.svg" alt="Wattsan"><p>Wattsan — profesionālas CNC iekārtas ar 21 gada pieredzi. Oficiālais pārstāvis Latvijā: SIA Bratus.</p></div><div class="footer-col"><h5>Iekārtas</h5><a href="index.html#katalogs">CNC Frēzes</a><a href="https://wattsan.com/products/laser-machines/" target="_blank">CO2 Lāzeri</a><a href="https://wattsan.com/products/fiber-metal-cutters/" target="_blank">Metāla griešana</a></div><div class="footer-col"><h5>Kontakti</h5><a href="tel:+37124424434">+371 24 424 434</a><a href="mailto:sales@bratus.lv">sales@bratus.lv</a><a href="https://bratus.lv" target="_blank">bratus.lv</a><p style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:8px">Dārznieku iela 42, Ķekava</p></div></div><div class="footer-bar"><p>© <span id="yr"></span> SIA <a href="https://bratus.lv" target="_blank">Bratus</a> · Wattsan oficiālais pārstāvis Latvijā · Reģ. nr. 40203628316</p></div></footer>'''
 
-JS = '<script>document.getElementById("yr").textContent=new Date().getFullYear();const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}});},{threshold:.05});document.querySelectorAll(".sr").forEach(el=>o.observe(el));function initGallery(id){const track=document.getElementById(id);if(!track)return;const slides=track.children;const total=slides.length;let idx=0;const dots=document.querySelectorAll("#"+id.replace("track","dots")+" .gallery-dot");const thumbs=document.querySelectorAll("#"+id.replace("track","thumbs")+" .gallery-thumb");function go(n){idx=(n+total)%total;track.style.transform="translateX(-"+idx*100+"%)";dots.forEach((d,i)=>{d.classList.toggle("active",i===idx)});thumbs.forEach((t,i)=>{t.classList.toggle("active",i===idx);if(i===idx)t.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})})}document.getElementById(id.replace("track","prev")).addEventListener("click",()=>go(idx-1));document.getElementById(id.replace("track","next")).addEventListener("click",()=>go(idx+1));dots.forEach((d,i)=>{d.addEventListener("click",()=>go(i))});thumbs.forEach((t,i)=>{t.addEventListener("click",()=>go(i))});let ts=0;track.parentElement.addEventListener("touchstart",e=>{ts=e.touches[0].clientX},{passive:true});track.parentElement.addEventListener("touchend",e=>{const d=ts-e.changedTouches[0].clientX;if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1)}},{passive:true});document.addEventListener("keydown",e=>{const g=e.target.closest(".product-gallery");if(g&&g.contains(track)){if(e.key==="ArrowLeft")go(idx-1);if(e.key==="ArrowRight")go(idx+1)}})}document.querySelectorAll(".gallery-track").forEach(t=>initGallery(t.id))</script>'
+JS = '<script>document.getElementById("yr").textContent=new Date().getFullYear();const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}});},{threshold:.05});document.querySelectorAll(".sr").forEach(el=>o.observe(el));function initGallery(id){const track=document.getElementById(id);if(!track)return;const slides=track.children;const total=slides.length;let idx=0;const dots=document.querySelectorAll("#"+id.replace("track","dots")+" .gallery-dot");const thumbs=document.querySelectorAll("#"+id.replace("track","thumbs")+" .gallery-thumb");function go(n){idx=(n+total)%total;track.style.transform="translateX(-"+idx*100+"%)";dots.forEach((d,i)=>{d.classList.toggle("active",i===idx)});thumbs.forEach((t,i)=>{t.classList.toggle("active",i===idx);if(i===idx)t.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})})}document.getElementById(id.replace("track","prev")).addEventListener("click",()=>go(idx-1));document.getElementById(id.replace("track","next")).addEventListener("click",()=>go(idx+1));dots.forEach((d,i)=>{d.addEventListener("click",()=>go(i))});thumbs.forEach((t,i)=>{t.addEventListener("click",()=>go(i))});let ts=0;track.parentElement.addEventListener("touchstart",e=>{ts=e.touches[0].clientX},{passive:true});track.parentElement.addEventListener("touchend",e=>{const d=ts-e.changedTouches[0].clientX;if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1)}},{passive:true});document.addEventListener("keydown",e=>{const g=e.target.closest(".product-gallery");if(g&&g.contains(track)){if(e.key==="ArrowLeft")go(idx-1);if(e.key==="ArrowRight")go(idx+1)}})}document.querySelectorAll(".gallery-track").forEach(t=>initGallery(t.id));function initMatSlider(id){const track=document.getElementById(id);if(!track)return;const cards=track.children;const cardW=cards[0]?cards[0].offsetWidth+20:120;let pos=0;const maxScroll=track.scrollWidth-track.parentElement.offsetWidth;document.getElementById(id.replace("track","prev")).addEventListener("click",()=>{pos=Math.max(0,pos-cardW*3);track.style.transform="translateX(-"+pos+"px)"});document.getElementById(id.replace("track","next")).addEventListener("click",()=>{pos=Math.min(maxScroll,pos+cardW*3);track.style.transform="translateX(-"+pos+"px)"})}document.querySelectorAll(".materials-track").forEach(t=>initMatSlider(t.id))</script>'
 
 SVG_ICONS = {
     'Kompakts dizains': '<path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-1V5a2 2 0 00-2-2H8a2 2 0 00-2 2v2H3z"/>',
@@ -465,6 +473,14 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
         for f in features
     ])
 
+    # Materials section
+    mat_cards = '\n'.join([f'<div class="material-card"><img class="material-img" src="{img}" alt="{name}" loading="lazy"><span class="material-name">{name}</span></div>' for name, img in MATERIALS.items()])
+    mat_html = f'''<div class="materials-slider">
+<button class="materials-arrow" id="{gallery_id}_mat_prev" aria-label="Iepriekš"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+<div class="materials-track-wrap"><div class="materials-track" id="{gallery_id}_mat_track">{mat_cards}</div></div>
+<button class="materials-arrow" id="{gallery_id}_mat_next" aria-label="Tālāk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>'''
+
     # Tech specs
     tech_rows = '\n'.join([
         f'<div class="specs-row"><div class="specs-row-l">{k}</div><div class="specs-row-v">{v}</div></div>'
@@ -514,11 +530,11 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
 <h2 class="section-title sr d1">Specifikācijas</h2>
 <div class="specs-grid" style="margin-top:24px">
 <div class="specs-block">{tech_rows}</div>
-<div class="specs-block">
-<h3>Materiāli</h3>
-<div class="materials-list">{mat_tags}</div>
-</div>
-</div>
+<section class="section" style="background:var(--bg);border-top:1px solid var(--border)">
+<div class="section-max">
+<div class="eyebrow sr">Materiāli</div>
+<h2 class="section-title sr d1">Apstrādā <strong>materiālus</strong></h2>
+{mat_html}
 </div>
 </section>
 {FOOTER}
@@ -529,6 +545,20 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
 
 
 # Products data
+# All materials with Wattsan images
+MATERIALS = {
+    'Koks': 'https://wattsan.com/wp-content/uploads/wood_wp.webp',
+    'Saplāksnis': 'https://wattsan.com/wp-content/uploads/plywood_wp.webp',
+    'MDF': 'https://wattsan.com/wp-content/uploads/mdf_wp.webp',
+    'Akrils': 'https://wattsan.com/wp-content/uploads/Acrylic_plexiglass_wp.webp',
+    'Plastmasa': 'https://wattsan.com/wp-content/uploads/Plastic_wp.webp',
+    'Skaidu plāksne': 'https://wattsan.com/wp-content/uploads/%D0%A1hipboard_wp.webp',
+    'Alumīnijs': 'https://wattsan.com/wp-content/uploads/aluminium_wp.webp',
+    'Varš': 'https://wattsan.com/wp-content/uploads/Copper_wp.webp',
+    'Gumija': 'https://wattsan.com/wp-content/uploads/rubber_wp.webp',
+    'Paronīts': 'https://wattsan.com/wp-content/uploads/Paronite_wp.webp',
+}
+
 PRODUCTS = [
     {
         'fn': 'wattsan-0404.html',
