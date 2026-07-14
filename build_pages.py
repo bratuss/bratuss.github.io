@@ -530,7 +530,15 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
 <h2 class="section-title sr d1">Specifikācijas</h2>
 <div class="specs-grid" style="margin-top:24px">
 <div class="specs-block">{tech_rows}</div>
-<section class="section" style="background:var(--bg);border-top:1px solid var(--border)">
+<div class="specs-block">
+<h3>Iekārtas klase</h3>
+<div class="specs-row"><div class="specs-row-l">Sērija</div><div class="specs-row-v">{badge}</div></div>
+<div class="specs-row"><div class="specs-row-l">Pielietojums</div><div class="specs-row-v">Koks, saplāksnis, MDF, akrils, plastmasa</div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border)">
 <div class="section-max">
 <div class="eyebrow sr">Materiāli</div>
 <h2 class="section-title sr d1">Apstrādā <strong>materiālus</strong></h2>
