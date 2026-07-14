@@ -478,7 +478,7 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
 {SUBNAV}
 <div class="breadcrumb"><div class="breadcrumb-inner"><a href="index.html">Sākums</a><span>/</span><a href="index.html#katalogs">CNC Frēzes</a><span>/</span><span class="breadcrumb-current">Wattsan {model_name}</span></div></div>
 <section class="product-hero">
-{gallery_html}
+<img class="gallery-slide" src="{gallery_imgs[0]}" alt="Wattsan {model_name}" style="aspect-ratio:4/3;object-fit:contain;background:var(--bg2);border:1px solid var(--border);padding:24px">
 <div class="product-info sr d1">
 <div class="product-badge"><span class="product-badge-dot"></span>{badge}</div>
 <h1 class="product-title">Wattsan <strong>{model_name}</strong></h1>
@@ -496,12 +496,19 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
 </section>
 <section class="section" style="background:var(--bg);border-top:1px solid var(--border)">
 <div class="section-max">
+<div class="eyebrow sr">Galerija</div>
+<h2 class="section-title sr d1">Attēlu <strong>galerija</strong></h2>
+{gallery_html}
+</div>
+</section>
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border)">
+<div class="section-max">
 <div class="eyebrow sr">Priekšrocības</div>
 <h2 class="section-title sr d1">Kāpēc <strong>Wattsan {model_name}</strong>?</h2>
 <div class="features-grid" style="margin-top:24px">{feat_cards}</div>
 </div>
 </section>
-<section class="section" style="background:var(--bg2);border-top:1px solid var(--border)">
+<section class="section" style="background:var(--bg);border-top:1px solid var(--border)">
 <div class="section-max">
 <div class="eyebrow sr">Tehniskie dati</div>
 <h2 class="section-title sr d1">Specifikācijas</h2>
