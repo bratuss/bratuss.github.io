@@ -446,7 +446,7 @@ def get_cat(slug):
 def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_imgs, key_specs, desc_text, features, tech_specs, materials):
     """Generate complete HTML product page."""
     # Gallery - swipeable carousel with arrows + dots
-    gallery_id = model_name.replace(' ','_').lower()
+    gallery_id = 'g_' + model_name.replace(' ','_').lower()
     slides = '\n'.join([f'<img class="gallery-slide" src="{img}" alt="Wattsan {model_name}">' for img in gallery_imgs])
     dots = '\n'.join([f'<button class="gallery-dot{" active" if i==0 else ""}" data-idx="{i}" aria-label="Bilde {i+1}"></button>' for i in range(len(gallery_imgs))])
     thumbs = '\n'.join([f'<img class="gallery-thumb{" active" if i==0 else ""}" src="{img}" data-idx="{i}" alt="Wattsan {model_name}">' for i, img in enumerate(gallery_imgs)])
