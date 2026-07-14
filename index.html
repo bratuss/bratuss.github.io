@@ -8,137 +8,159 @@
 <meta name="description" content="Oficiālais Wattsan CNC frēžu izplatītājs Latvijā. Profesionālas CNC iekārtas kokam, saplāksnim, MDF un plastmasai. Piegāde, uzstādīšana un serviss.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:#1a1a2e;overflow-x:hidden;-webkit-font-smoothing:antialiased;background:#fff}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;overflow-x:hidden;-webkit-font-smoothing:antialiased;background:#fff}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
-:root{--red:#E03E2D;--red-dark:#c0392b;--dark:#1B1F2E;--dark2:#252a3a;--gray:#6B7280;--bg-light:#F8F9FB;--border:#E5E7EB;--max:1240px;--ease:cubic-bezier(.22,1,.36,1)}
-.top-bar{background:var(--dark);color:rgba(255,255,255,.7);font-size:0.8rem;padding:8px clamp(16px,4vw,52px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.top-bar a{color:#fff;font-weight:500;transition:color .2s}
-.top-bar a:hover{color:var(--red)}
-.top-bar-left{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.top-bar-right{display:flex;align-items:center;gap:16px}
-nav{position:sticky;top:0;z-index:200;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,52px);background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);gap:12px}
-.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nav-logo-text{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.35rem;letter-spacing:-0.02em;color:var(--dark);white-space:nowrap}
-.nav-logo-text span{color:var(--red)}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
-.nav-links a{font-size:0.88rem;font-weight:500;color:var(--gray);transition:color .2s;white-space:nowrap}
-.nav-links a:hover{color:var(--red)}
-.nav-cta{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.btn-primary-sm{padding:10px 20px;background:var(--red);border-radius:8px;font-size:0.85rem;font-weight:600;color:#fff;transition:all .2s;white-space:nowrap;border:none;cursor:pointer}
-.btn-primary-sm:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 4px 16px rgba(224,62,45,.3)}
-@media(max-width:768px){.nav-links{display:none}}
-.hero{min-height:85vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px clamp(16px,5vw,60px) 80px;position:relative;overflow:hidden;background:linear-gradient(180deg,#F8F9FB 0%,#fff 100%)}
-.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:700px;height:700px;background:radial-gradient(ellipse,rgba(224,62,45,.06) 0%,transparent 60%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-20%;left:-10%;width:600px;height:600px;background:radial-gradient(ellipse,rgba(27,31,46,.04) 0%,transparent 60%);pointer-events:none}
-.hero-inner{position:relative;z-index:1;max-width:820px;width:100%}
-.hero-h1{font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.05;letter-spacing:-0.02em;margin-bottom:20px;color:var(--dark);animation:fadeUp .6s var(--ease) .1s both}
-.hero-h1 .line{display:block}
-.hero-h1 .accent{color:var(--red)}
-.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--gray);line-height:1.7;max-width:600px;margin:0 auto 36px;font-weight:400;animation:fadeUp .6s var(--ease) .25s both}
+:root{--red:#E63C32;--red-dark:#c53030;--dark:#1a1a1a;--gray:#666;--gray-light:#888;--bg-light:#f5f5f5;--bg-card:#fafafa;--border:rgba(0,0,0,.08);--max:1300px;--ease:cubic-bezier(.22,1,.36,1)}
+
+/* ANNOUNCEMENT */
+.annbar{background:var(--red);color:#fff;text-align:center;padding:10px 20px;font-size:0.82rem;font-weight:500;letter-spacing:.02em}
+.annbar a{color:#fff;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.annbar a:hover{opacity:.85}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,52px);background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);gap:16px}
+.nav-logo{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.nav-logo img{height:28px;width:auto}
+.nav-logo .divider{width:1px;height:24px;background:var(--border);flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:0.85rem;font-weight:500;color:var(--gray);transition:color .2s;white-space:nowrap;letter-spacing:.01em}
+.nav-links a:hover{color:var(--dark)}
+.nav-cta{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-cta .btn-outline-sm{padding:8px 18px;border:1.5px solid rgba(0,0,0,.15);font-size:0.82rem;font-weight:500;color:var(--gray);transition:all .2s;white-space:nowrap;cursor:pointer}
+.nav-cta .btn-outline-sm:hover{color:var(--dark);border-color:rgba(0,0,0,.3)}
+.btn-red-sm{padding:9px 20px;background:var(--red);font-size:0.82rem;font-weight:600;color:#fff;transition:all .2s;white-space:nowrap;border:none;cursor:pointer}
+.btn-red-sm:hover{background:var(--red-dark)}
+
+@media(max-width:860px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px clamp(20px,5vw,60px);overflow:hidden;background:var(--dark)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(230,60,50,.12) 0%,transparent 60%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:900px;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(230,60,50,.15);color:#ffa09b;font-size:0.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;margin-bottom:24px}
+.hero-h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;font-size:clamp(2.8rem,7vw,5.2rem);line-height:1.05;letter-spacing:-0.02em;margin-bottom:28px;color:#fff;animation:fadeUp .6s var(--ease) .1s both}
+.hero-h1 span{display:block}
+.hero-h1 .accent{color:var(--red);font-weight:400}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.7;max-width:550px;margin:0 auto 36px;animation:fadeUp .6s var(--ease) .25s both}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s var(--ease) .4s both}
-.btn-primary-lg{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 34px;background:var(--red);border-radius:10px;font-size:0.95rem;font-weight:600;color:#fff;transition:all .25s var(--ease);font-family:'Inter',sans-serif;border:none;cursor:pointer}
-.btn-primary-lg:hover{background:var(--red-dark);transform:translateY(-3px);box-shadow:0 14px 36px rgba(224,62,45,.25)}
-.btn-secondary-lg{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 34px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:0.95rem;font-weight:500;color:var(--dark);transition:all .25s var(--ease);font-family:'Inter',sans-serif}
-.btn-secondary-lg:hover{border-color:var(--red);color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
-@media(max-width:480px){.hero-btns{flex-direction:column;align-items:center;width:100%}.btn-primary-lg,.btn-secondary-lg{width:100%}}
-.section{padding:clamp(60px,8vw,100px) clamp(16px,5vw,60px);position:relative}
+
+.btn-red-lg{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 30px;background:var(--red);font-size:0.92rem;font-weight:600;color:#fff;transition:all .25s var(--ease);font-family:'Inter',sans-serif;border:none;cursor:pointer}
+.btn-red-lg:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 12px 32px rgba(230,60,50,.3)}
+.btn-ghost-lg{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 30px;border:1.5px solid rgba(255,255,255,.2);font-size:0.92rem;font-weight:500;color:rgba(255,255,255,.6);transition:all .25s var(--ease);font-family:'Inter',sans-serif}
+.btn-ghost-lg:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+@media(max-width:480px){.hero-btns{flex-direction:column;align-items:center;width:100%}.btn-red-lg,.btn-ghost-lg{width:100%}}
+
+/* SECTIONS */
+.section{padding:clamp(60px,8vw,100px) clamp(20px,5vw,60px);position:relative}
 .section-max{max-width:var(--max);margin:0 auto}
+.section-gray{background:var(--bg-light)}
 .section-dark{background:var(--dark);color:#fff}
-.section-light{background:var(--bg-light)}
-.tag{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
-.tag::before{content:'';display:block;width:20px;height:2px;background:var(--red);border-radius:2px}
-.section-title{font-family:'Outfit',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-0.02em;line-height:1.08;margin-bottom:12px;color:var(--dark)}
+
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:0.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.tag::before{content:'';display:block;width:16px;height:2px;background:var(--red)}
+.section-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:300;letter-spacing:-0.02em;line-height:1.1;margin-bottom:12px;color:var(--dark)}
+.section-title .r{color:var(--red);font-weight:400}
 .section-dark .section-title{color:#fff}
-.section-title .r{color:var(--red)}
-.section-subtitle{font-size:1.05rem;color:var(--gray);line-height:1.65;max-width:620px;margin-bottom:48px}
-.section-dark .section-subtitle{color:rgba(255,255,255,.6)}
-.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.cnc-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px 24px;display:flex;flex-direction:column;position:relative;transition:all .35s var(--ease);box-shadow:0 1px 3px rgba(0,0,0,.04)}
-.cnc-card:hover{border-color:rgba(224,62,45,.3);transform:translateY(-8px);box-shadow:0 20px 48px rgba(0,0,0,.1)}
-.cnc-card.featured{border-color:rgba(224,62,45,.4);background:rgba(224,62,45,.015)}
-.cnc-img-wrap{height:220px;display:flex;align-items:center;justify-content:center;background:var(--bg-light);border-radius:12px;margin-bottom:20px;position:relative;overflow:hidden}
+.section-subtitle{font-size:1rem;color:var(--gray);line-height:1.65;max-width:600px;margin-bottom:44px}
+.section-dark .section-subtitle{color:rgba(255,255,255,.5)}
+
+/* CATALOG */
+.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cnc-card{background:#fff;border:1px solid var(--border);padding:24px 20px 20px;display:flex;flex-direction:column;position:relative;transition:all .3s var(--ease)}
+.cnc-card:hover{border-color:rgba(230,60,50,.25);box-shadow:0 16px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
+.cnc-card.featured{border-color:rgba(230,60,50,.35);background:#fffcfc}
+.cnc-img-wrap{height:200px;display:flex;align-items:center;justify-content:center;background:var(--bg-light);margin-bottom:18px;position:relative;overflow:hidden}
 .cnc-img-wrap img{max-height:100%;object-fit:contain;transition:transform .5s var(--ease)}
-.cnc-card:hover .cnc-img-wrap img{transform:scale(1.06)}
-.cnc-badge{position:absolute;top:12px;right:12px;background:var(--dark);color:#fff;font-size:0.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+.cnc-card:hover .cnc-img-wrap img{transform:scale(1.05)}
+.cnc-badge{position:absolute;top:8px;right:8px;background:var(--dark);color:#fff;font-size:0.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px}
 .cnc-card.featured .cnc-badge{background:var(--red)}
-.cnc-meta{font-size:0.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:6px;font-weight:600}
-.cnc-title{font-family:'Outfit',sans-serif;font-size:1.45rem;font-weight:800;letter-spacing:-0.01em;margin-bottom:16px;color:var(--dark);line-height:1.1}
-.cnc-specs{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px;flex-grow:1}
-.cnc-specs li{display:flex;justify-content:space-between;align-items:center;font-size:0.84rem;padding-bottom:8px;border-bottom:1px solid var(--bg-light)}
+.cnc-meta{font-size:0.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:5px;font-weight:600}
+.cnc-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.3rem;font-weight:400;letter-spacing:-0.01em;margin-bottom:14px;color:var(--dark);line-height:1.1}
+.cnc-specs{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:22px;flex-grow:1}
+.cnc-specs li{display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;padding-bottom:7px;border-bottom:1px solid rgba(0,0,0,.04)}
 .cnc-specs li:last-child{border-bottom:none}
-.cnc-specs .lbl{color:var(--gray)}
+.cnc-specs .lbl{color:var(--gray-light)}
 .cnc-specs .val{font-weight:600;color:var(--dark)}
-.btn-outline{display:block;width:100%;text-align:center;padding:12px;border:1.5px solid var(--border);border-radius:10px;font-size:0.85rem;font-weight:600;color:var(--dark);transition:all .2s;margin-top:auto}
-.btn-outline:hover{border-color:var(--red);color:var(--red);background:rgba(224,62,45,.03)}
-.catalog-more{display:flex;justify-content:center;margin-top:44px}
+.btn-outline{display:block;width:100%;text-align:center;padding:11px;border:1.5px solid rgba(0,0,0,.12);font-size:0.83rem;font-weight:500;color:var(--dark);transition:all .2s;margin-top:auto}
+.btn-outline:hover{border-color:var(--red);color:var(--red);background:rgba(230,60,50,.03)}
+.catalog-more{display:flex;justify-content:center;margin-top:40px}
+
 @media(max-width:1000px){.catalog-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.catalog-grid{grid-template-columns:1fr}}
+
+/* ADVANTAGES */
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.adv-card{background:#fff;border:1px solid var(--border);padding:28px 24px;transition:all .3s var(--ease)}
+.adv-card:hover{border-color:rgba(230,60,50,.2);box-shadow:0 8px 30px rgba(0,0,0,.06);transform:translateY(-3px)}
+.adv-icon{width:44px;height:44px;background:rgba(230,60,50,.06);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--red)}
+.adv-card h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:500;margin-bottom:8px;color:var(--dark)}
+.adv-card p{font-size:0.88rem;color:var(--gray);line-height:1.6}
+@media(max-width:900px){.adv-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.adv-grid{grid-template-columns:1fr}}
+
+/* STATS */
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
-.stat-item{display:flex;flex-direction:column;align-items:center;gap:8px}
-.stat-number{font-family:'Outfit',sans-serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:900;color:var(--red);line-height:1}
-.stat-label{font-size:0.95rem;color:rgba(255,255,255,.65);font-weight:400}
+.stat-number{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--red);line-height:1;margin-bottom:6px}
+.stat-label{font-size:0.88rem;color:rgba(255,255,255,.5);font-weight:400}
 @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}}
-@media(max-width:420px){.stats-grid{grid-template-columns:1fr 1fr}}
-.info-inner{max-width:860px;margin:0 auto}
+
+/* INFO */
+.info-inner{max-width:820px;margin:0 auto}
 .info-block{margin-bottom:56px}
 .info-block:last-child{margin-bottom:0}
-.info-block h3{font-family:'Outfit',sans-serif;font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;letter-spacing:-0.015em;margin-bottom:20px;color:var(--dark)}
-.info-block p{font-size:1rem;color:var(--gray);line-height:1.8;margin-bottom:22px}
-.info-list{display:flex;flex-direction:column;gap:14px;margin:24px 0}
-.info-list li{display:flex;align-items:flex-start;gap:14px;font-size:0.95rem;color:var(--dark);line-height:1.6}
-.info-list li::before{content:'';display:block;flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(224,62,45,.08);border:1.5px solid rgba(224,62,45,.25);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.5 6L9 1' stroke='%23E03E2D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;margin-top:2px}
-.info-num-list{list-style:none;counter-reset:my-counter;margin:28px 0}
-.info-num-list li{position:relative;padding-left:44px;font-size:0.95rem;color:var(--dark);line-height:1.6;margin-bottom:18px}
-.info-num-list li::before{counter-increment:my-counter;content:"0" counter(my-counter);position:absolute;left:0;top:1px;font-family:'Outfit',sans-serif;font-size:0.85rem;font-weight:800;color:var(--red);letter-spacing:.04em}
-.advantages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.adv-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px 28px;transition:all .3s var(--ease);box-shadow:0 1px 3px rgba(0,0,0,.03)}
-.adv-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);border-color:rgba(224,62,45,.2)}
-.adv-icon{width:48px;height:48px;background:rgba(224,62,45,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--red)}
-.adv-card h4{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:10px;color:var(--dark)}
-.adv-card p{font-size:0.9rem;color:var(--gray);line-height:1.65}
-@media(max-width:900px){.advantages-grid{grid-template-columns:1fr}}
-@media(min-width:600px) and (max-width:900px){.advantages-grid{grid-template-columns:repeat(2,1fr)}}
-.cta-band{background:var(--dark);padding:80px clamp(16px,5vw,60px);text-align:center;position:relative;overflow:hidden;color:#fff}
-.cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(224,62,45,.1) 0%,transparent 70%);pointer-events:none}
-.cta-band h2{font-family:'Outfit',sans-serif;font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;position:relative;z-index:1}
-.cta-band h2 span{color:var(--red)}
-.cta-band p{font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+.info-block h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:400;letter-spacing:-0.01em;margin-bottom:18px;color:var(--dark)}
+.info-block p{font-size:0.95rem;color:var(--gray);line-height:1.8;margin-bottom:20px}
+.info-list{display:flex;flex-direction:column;gap:12px;margin:20px 0}
+.info-list li{display:flex;align-items:flex-start;gap:12px;font-size:0.93rem;color:var(--dark);line-height:1.6}
+.info-list li::before{content:'';display:block;flex-shrink:0;width:20px;height:20px;background:rgba(230,60,50,.08);border:1.5px solid rgba(230,60,50,.2);background-image:url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.5 6L9 1' stroke='%23E63C32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;margin-top:3px}
+.info-num-list{list-style:none;counter-reset:mc;margin:24px 0}
+.info-num-list li{position:relative;padding-left:40px;font-size:0.93rem;color:var(--dark);line-height:1.6;margin-bottom:16px}
+.info-num-list li::before{counter-increment:mc;content:"0" counter(mc);position:absolute;left:0;top:1px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;font-weight:600;color:var(--red);letter-spacing:.04em}
+
+/* CTA BAND */
+.cta-band{background:var(--dark);padding:80px clamp(20px,5vw,60px);text-align:center;position:relative;overflow:hidden;color:#fff}
+.cta-band::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(230,60,50,.1) 0%,transparent 70%);pointer-events:none}
+.cta-band h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;letter-spacing:-0.02em;margin-bottom:12px;position:relative;z-index:1}
+.cta-band h2 span{color:var(--red);font-weight:400}
+.cta-band p{font-size:0.95rem;color:rgba(255,255,255,.5);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;position:relative;z-index:1}
 .cta-band-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-footer{background:#151922;color:#fff;padding:0}
-.footer-main{max-width:var(--max);margin:0 auto;padding:60px clamp(16px,5vw,60px) 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
-.footer-col h4{font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:20px;color:#fff;letter-spacing:-0.01em}
-.footer-col p{font-size:0.9rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:14px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
-.footer-col ul li{font-size:0.88rem}
-.footer-col ul li a{color:rgba(255,255,255,.55);transition:color .2s}
+
+/* FOOTER */
+footer{background:var(--dark);color:#fff;padding:0}
+.footer-main{max-width:var(--max);margin:0 auto;padding:60px clamp(20px,5vw,60px) 40px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.footer-col h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;font-weight:500;margin-bottom:18px;color:#fff;letter-spacing:-0.01em}
+.footer-col p{font-size:0.85rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:12px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul li{font-size:0.84rem}
+.footer-col ul li a{color:rgba(255,255,255,.45);transition:color .2s}
 .footer-col ul li a:hover{color:var(--red)}
-.footer-col .contact-row{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:rgba(255,255,255,.65);margin-bottom:10px}
-.footer-col .contact-row svg{width:16px;height:16px;color:var(--red);flex-shrink:0;margin-top:2px}
-.footer-col .contact-row a{color:#fff;font-weight:500;transition:color .2s}
-.footer-col .contact-row a:hover{color:var(--red)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:20px clamp(16px,5vw,60px);text-align:center;font-size:0.78rem;color:rgba(255,255,255,.3);display:flex;flex-direction:column;gap:6px}
-.footer-bottom a{color:rgba(255,255,255,.5);transition:color .2s;text-decoration:underline;text-decoration-color:rgba(255,255,255,.08)}
-.footer-bottom a:hover{color:var(--red);text-decoration-color:var(--red)}
+.footer-col .c-row{display:flex;align-items:flex-start;gap:10px;font-size:0.84rem;color:rgba(255,255,255,.55);margin-bottom:9px}
+.footer-col .c-row svg{width:15px;height:15px;color:var(--red);flex-shrink:0;margin-top:2px}
+.footer-col .c-row a{color:#fff;font-weight:500;transition:color .2s}
+.footer-col .c-row a:hover{color:var(--red)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding:20px clamp(20px,5vw,60px);text-align:center;font-size:0.75rem;color:rgba(255,255,255,.3);display:flex;flex-direction:column;gap:4px}
+.footer-bottom a{color:rgba(255,255,255,.45);transition:color .2s}
+.footer-bottom a:hover{color:var(--red)}
 @media(max-width:900px){.footer-main{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:600px){.footer-main{grid-template-columns:1fr}}
-.sr{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+
+/* ANIMATIONS */
+.sr{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .sr.in{opacity:1;transform:translateY(0)}
-.sr-d1{transition-delay:.08s}
-.sr-d2{transition-delay:.16s}
-.sr-d3{transition-delay:.24s}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-</style>
+.sr-d1{transition-delay:.08s}.sr-d2{transition-delay:.16s}.sr-d3{transition-delay:.24s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}</style>
 </head>
-<body>
-<div class="top-bar"><div class="top-bar-left"><a href="tel:+37124424434">📞 +371 24 424 434</a><a href="mailto:sales@bratus.lv">✉️ sales@bratus.lv</a></div><div class="top-bar-right"><span>🇱🇻 Latvija</span></div></div>
-<nav><a href="index.html" class="nav-logo"><div class="nav-logo-text">WATTSAN<span>Latvia</span></div></a><ul class="nav-links"><li><a href="#katalogs">CNC Frēzes</a></li><li><a href="#prieksrocibas">Priekšrocības</a></li><li><a href="#info">Informācija</a></li><li><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">Bratus.lv ↗</a></li><li><a href="#kontakti">Kontakti</a></li></ul><div class="nav-cta"><a href="#kontakti" class="btn-primary-sm">Sazināties</a></div></nav>
-<section class="hero"><div class="hero-inner"><h1 class="hero-h1"><span class="line">Wattsan CNC Frēzes</span><span class="line accent">Oficiālais Pārstāvis</span><span class="line">Latvijā</span></h1><p class="hero-sub">Profesionālas CNC iekārtas kokam, saplāksnim, MDF un plastmasai. Mēs esam oficiālie Wattsan pārstāvji Latvijā — nodrošinām pilnu servisu, apmācības un garantiju.</p><div class="hero-btns"><a href="#katalogs" class="btn-primary-lg">Apskatīt Modeļus<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-secondary-lg">Pilnais Katalogs<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div></section>
-<section class="section section-light" id="katalogs"><div class="section-max"><div class="sr"><div class="tag">CNC Frēžu Katalogs</div><h2 class="section-title">Izvēlies savu <span class="r">Wattsan</span> modeli</h2><p class="section-subtitle">No kompaktām galda frēzēm līdz industriālām lielformāta iekārtām — mums ir risinājums katrai ražošanas vajadzībai.</p></div><div class="catalog-grid">
+<body><div class="annbar">🇱🇻 Bratus.lv — Wattsan oficiālais pārstāvis Latvijā. Piegāde, uzstādīšana un garantijas apkalpošana.</div>
+<nav><a href="index.html" class="nav-logo"><img src="https://wattsan.com/wp-content/uploads/wattsan_logo-1.svg" alt="Wattsan"><span class="divider"></span><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Untitleddesign.png?v=1769505279" alt="Bratus" style="height:22px"></a><ul class="nav-links"><li><a href="#katalogs">CNC Frēzes</a></li><li><a href="#prieksrocibas">Priekšrocības</a></li><li><a href="#info">Informācija</a></li><li><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">Bratus.lv ↗</a></li><li><a href="#kontakti">Kontakti</a></li></ul><div class="nav-cta"><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-outline-sm">Oficiālais pārstāvis ↗</a><a href="#kontakti" class="btn-red-sm">Pieteikt</a></div></nav>
+
+<section class="hero"><div class="hero-inner"><div class="hero-badge">Oficiālais Wattsan Pārstāvis Latvijā</div><h1 class="hero-h1"><span>CNC Frēzes</span><span class="accent">jūsu ražošanai</span></h1><p class="hero-sub">Profesionālas Wattsan CNC iekārtas kokam, saplāksnim, MDF un plastmasai. No kompaktām galda frēzēm līdz industriālām lielformāta iekārtām.</p><div class="hero-btns"><a href="#katalogs" class="btn-red-lg">Apskatīt Modeļus<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-ghost-lg">Pilnais Katalogs<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div></section>
+
+<section class="section" id="katalogs"><div class="section-max"><div class="sr"><div class="tag">CNC Frēžu Katalogs</div><h2 class="section-title">Izvēlies savu <span class="r">Wattsan</span> modeli</h2><p class="section-subtitle">No kompaktām galda frēzēm līdz industriālām lielformāta iekārtām — mums ir risinājums katrai ražošanas vajadzībai.</p></div><div class="catalog-grid">
 <div class="cnc-card sr"><div class="cnc-img-wrap"><div class="cnc-badge">MINI</div><img src="https://wattsan.com/wp-content/uploads/titul-0404-mini-zip.png" alt="Wattsan 0404 Mini"></div><div class="cnc-meta">Galda CNC Frēze</div><h3 class="cnc-title">Wattsan 0404</h3><ul class="cnc-specs"><li><span class="lbl">Darba laukums</span><span class="val">400 × 400 mm</span></li><li><span class="lbl">Vārpstas jauda</span><span class="val">1.5 kW</span></li><li><span class="lbl">Kontrolieris</span><span class="val">NcStudio</span></li></ul><a href="wattsan-0404.html" class="btn-outline">Skatīt vairāk →</a></div>
 <div class="cnc-card sr sr-d1"><div class="cnc-img-wrap"><div class="cnc-badge">MINI</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 0609 Mini"></div><div class="cnc-meta">Kompakta CNC Frēze</div><h3 class="cnc-title">Wattsan 0609</h3><ul class="cnc-specs"><li><span class="lbl">Darba laukums</span><span class="val">900 × 600 mm</span></li><li><span class="lbl">Vārpstas jauda</span><span class="val">2.2 kW</span></li><li><span class="lbl">Kontrolieris</span><span class="val">DSP A11</span></li></ul><a href="wattsan-0609.html" class="btn-outline">Skatīt vairāk →</a></div>
 <div class="cnc-card featured sr sr-d2"><div class="cnc-img-wrap"><div class="cnc-badge">Populārākais</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan M1 1313 S4"></div><div class="cnc-meta">Koka Frēze</div><h3 class="cnc-title">Wattsan 1313 M1 S4</h3><ul class="cnc-specs"><li><span class="lbl">Darba laukums</span><span class="val">1300 × 1300 mm</span></li><li><span class="lbl">Vārpstas jauda</span><span class="val">4.5 kW</span></li><li><span class="lbl">Kontrolieris</span><span class="val">DSP A11</span></li></ul><a href="wattsan-1313.html" class="btn-outline">Skatīt vairāk →</a></div>
@@ -146,12 +168,16 @@ footer{background:#151922;color:#fff;padding:0}
 <div class="cnc-card sr sr-d1"><div class="cnc-img-wrap"><div class="cnc-badge">M2 Sērija</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan M2 1616"></div><div class="cnc-meta">Universālā Frēze</div><h3 class="cnc-title">Wattsan 1616 M2</h3><ul class="cnc-specs"><li><span class="lbl">Darba laukums</span><span class="val">1600 × 1600 mm</span></li><li><span class="lbl">Vārpstas jauda</span><span class="val">4.5 kW</span></li><li><span class="lbl">Kontrolieris</span><span class="val">RichAuto A11</span></li></ul><a href="wattsan-1616.html" class="btn-outline">Skatīt vairāk →</a></div>
 <div class="cnc-card sr sr-d2"><div class="cnc-img-wrap"><div class="cnc-badge">Lieljaudas</div><img src="https://wattsan.com/wp-content/uploads/m12030plus2-2.png" alt="Wattsan M1 2030"></div><div class="cnc-meta">Lielformāta Frēze</div><h3 class="cnc-title">Wattsan 2030 M1</h3><ul class="cnc-specs"><li><span class="lbl">Darba laukums</span><span class="val">2000 × 3000 mm</span></li><li><span class="lbl">Vārpstas jauda</span><span class="val">6 kW</span></li><li><span class="lbl">Kontrolieris</span><span class="val">RichAuto A11</span></li></ul><a href="wattsan-2030.html" class="btn-outline">Skatīt vairāk →</a></div>
 <div class="cnc-card sr"><div class="cnc-img-wrap"><div class="cnc-badge">Industriālā</div><img src="https://wattsan.com/wp-content/uploads/20402-1-1-1-1.png" alt="Wattsan M1 2040"></div><div class="cnc-meta">Maksimālais Izmērs</div><h3 class="cnc-title">Wattsan 2040 M1</h3><ul class="cnc-specs"><li><span class="lbl">Darba laukums</span><span class="val">2000 × 4000 mm</span></li><li><span class="lbl">Vārpstas jauda</span><span class="val">6 kW</span></li><li><span class="lbl">Kontrolieris</span><span class="val">RichAuto A11</span></li></ul><a href="wattsan-2040.html" class="btn-outline">Skatīt vairāk →</a></div>
-</div><div class="catalog-more sr"><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-secondary-lg">Pilnais Katalogs Bratus.lv<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div></section>
-<section class="section section-dark"><div class="section-max"><div class="stats-grid sr"><div class="stat-item"><div class="stat-number">20k+</div><div class="stat-label">Pārdotas iekārtas</div></div><div class="stat-item"><div class="stat-number">21</div><div class="stat-label">Gadu pieredze</div></div><div class="stat-item"><div class="stat-number">50+</div><div class="stat-label">Valstis pasaulē</div></div><div class="stat-item"><div class="stat-number">185</div><div class="stat-label">Inženieri komandā</div></div></div></div></section>
-<section class="section" id="prieksrocibas"><div class="section-max"><div class="sr"><div class="tag">Kāpēc Wattsan</div><h2 class="section-title">Jūsu <span class="r">ražošanas</span> priekšrocības</h2><p class="section-subtitle">Mēs nodrošinām ne tikai iekārtas, bet arī pilnu atbalsta ciklu — no izvēles līdz servisam.</p></div><div class="advantages-grid"><div class="adv-card sr"><div class="adv-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><h4>Oficiālā Garantija</h4><p>Pilna ražotāja garantija ar servisu Latvijā. Mēs esam oficiālie Wattsan pārstāvji.</p></div><div class="adv-card sr sr-d1"><div class="adv-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>Apmācības Iekļautas</h4><p>Personāla apmācība darbā ar CNC iekārtu, programmatūras iestatīšana un konsultācijas.</p></div><div class="adv-card sr sr-d2"><div class="adv-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8V4l8-2 8 2v6.2c0 7.3-8 11.8-8 11.8z"/></svg></div><h4>Uzticamība & Kvalitāte</h4><p>Rūpnieciskas klases komponentes no pasaules vadošajiem ražotājiem nodrošina ilgmūžību.</p></div></div></div></section>
-<section class="section section-light" id="info"><div class="info-inner"><div class="info-block sr"><div class="tag">Pielietojums</div><h3>Ko var izgatavot ar <span class="r">CNC frēzi?</span></h3><p>CNC frēzes ir neatņemama mūsdienīgas ražošanas sastāvdaļa. Pateicoties izcilai precizitātei un materiālu daudzveidībai, ar CNC frēzi var apstrādāt koku, saplāksni, MDF, akrilu, alumīniju un daudz ko citu.</p><ul class="info-list"><li>Durvis, rāmji, rokturi, kāpnes, mēbeles un interjera elementi</li><li>Detaļas dažāda veida iekārtām un mehānismiem</li><li>Dāvanas, suvenīri, rotaļlietas un dekoratīvi risinājumi</li><li>Reklāmas elementi: logotipi, izkārtnes, apjomīgi burti</li><li>Organizatori, blīves un ieliktņi</li></ul></div><div class="info-block sr"><div class="tag">Izvēles Gids</div><h3>Kā izvēlēties <span class="r">piemērotāko?</span></h3><p>Pirms iekārtas iegādes ir svarīgi nodefinēt ražošanas mērķus. Atbildiet uz šiem diviem galvenajiem jautājumiem:</p><ul class="info-num-list"><li>Kādus produktus es ražošu un no kādiem materiāliem?</li><li>Kāds ir plānotais ražošanas apjoms un nepieciešamais ātrums?</li></ul><p>Piemēram, durvju ražošanai ideāli piemēroti būs 1325 sērijas modeļi (darba laukums 1300×2500 mm), kas atbilst standarta durvju sagatavēm. Savukārt hobijiem un nelieliem suvenīriem pilnīgi pietiks ar kompaktiem modeļiem kā 0404 Mini, kuri, neskatoties uz savu izmēru, ir aprīkoti ar jaudīgām vārpstām.</p></div></div></section>
-<div class="cta-band"><h2 class="sr">Gatavi uzsākt? <span>Sazinieties</span> ar mums</h2><p class="sr sr-d1">Mēs palīdzēsim izvēlēties piemērotāko CNC frēzi tieši Jūsu vajadzībām un budžetam.</p><div class="cta-band-btns sr sr-d2"><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-primary-lg">Apmeklēt Bratus.lv<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
-<footer id="kontakti"><div class="footer-main"><div class="footer-col"><h4>SIA Bratus — Oficiālais Wattsan Pārstāvis</h4><p>Oficiālais Wattsan iekārtu izplatītājs Latvijā. Piegādājam, uzstādām un nodrošinām tehnisko atbalstu un garantiju visā reģionā.</p></div><div class="footer-col"><h4>Ātrās Saites</h4><ul><li><a href="#katalogs">CNC Frēžu Katalogs</a></li><li><a href="#prieksrocibas">Priekšrocības</a></li><li><a href="#info">Informācija</a></li><li><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">Bratus.lv</a></li></ul></div><div class="footer-col"><h4>Kontakti</h4><div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A2 2 0 0 1 2.11 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81A2 2 0 0 1 7.36 10.7L6.09 11.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+37124424434">+371 24 424 434</a></div><div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sales@bratus.lv">sales@bratus.lv</a></div><div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dārznieku iela 42, Ķekava, LV-2123</span></div><div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Reģ. nr. 40203628316</span></div></div></div><div class="footer-bottom"><p>© <span id="year"></span> SIA Bratus (cncfrezes.lv). Visas tiesības aizsargātas.</p><p>Apmeklējiet mūsu pilno katalogu: <a href="https://bratus.lv" target="_blank" rel="noopener noreferrer">bratus.lv</a></p></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});},{threshold:0.08});document.querySelectorAll('.sr').forEach(el=>obs.observe(el));</script>
-</body>
+</div><div class="catalog-more sr"><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border:1.5px solid rgba(0,0,0,.12);font-size:0.92rem;font-weight:500;color:var(--dark);transition:all .25s var(--ease)">Pilnais Katalogs Bratus.lv<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div></div></section>
+
+<section class="section section-dark"><div class="section-max"><div class="stats-grid sr"><div class="stat-item"><div class="stat-number">20k+</div><div class="stat-label">Pārdotas iekārtas</div></div><div class="stat-item"><div class="stat-number">21</div><div class="stat-label">Gadu pieredze</div></div><div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Valstis pasaulē</div></div><div class="stat-item"><div class="stat-number">185</div><div class="stat-label">Inženieri komandā</div></div></div></div></section>
+
+<section class="section" id="prieksrocibas"><div class="section-max"><div class="sr"><div class="tag">Kāpēc Wattsan</div><h2 class="section-title">Jūsu <span class="r">ražošanas</span> priekšrocības</h2><p class="section-subtitle">Mēs nodrošinām ne tikai iekārtas, bet arī pilnu atbalsta ciklu — no izvēles līdz servisam.</p></div><div class="adv-grid"><div class="adv-card sr"><div class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div><h4>Oficiālā Garantija</h4><p>Pilna ražotāja garantija ar servisu Latvijā. Mēs esam oficiālie Wattsan pārstāvji.</p></div><div class="adv-card sr sr-d1"><div class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>Apmācības Iekļautas</h4><p>Personāla apmācība darbā ar CNC iekārtu, programmatūras iestatīšana un konsultācijas.</p></div><div class="adv-card sr sr-d2"><div class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8V4l8-2 8 2v6.2c0 7.3-8 11.8-8 11.8z"/></svg></div><h4>Uzticamība & Kvalitāte</h4><p>Rūpnieciskas klases komponentes no pasaules vadošajiem ražotājiem nodrošina ilgmūžību.</p></div></div></div></section>
+
+<section class="section section-gray" id="info"><div class="info-inner"><div class="info-block sr"><div class="tag">Pielietojums</div><h3>Ko var izgatavot ar CNC frēzi?</h3><p>CNC frēzes ir neatņemama mūsdienīgas ražošanas sastāvdaļa. Pateicoties izcilai precizitātei un materiālu daudzveidībai, ar CNC frēzi var apstrādāt koku, saplāksni, MDF, akrilu, alumīniju un daudz ko citu.</p><ul class="info-list"><li>Durvis, rāmji, rokturi, kāpnes, mēbeles un interjera elementi</li><li>Detaļas dažāda veida iekārtām un mehānismiem</li><li>Dāvanas, suvenīri, rotaļlietas un dekoratīvi risinājumi</li><li>Reklāmas elementi: logotipi, izkārtnes, apjomīgi burti</li><li>Organizatori, blīves un ieliktņi</li></ul></div><div class="info-block sr"><div class="tag">Izvēles Gids</div><h3>Kā izvēlēties piemērotāko?</h3><p>Pirms iekārtas iegādes ir svarīgi nodefinēt ražošanas mērķus. Atbildiet uz šiem diviem galvenajiem jautājumiem:</p><ul class="info-num-list"><li>Kādus produktus es ražošu un no kādiem materiāliem?</li><li>Kāds ir plānotais ražošanas apjoms un nepieciešamais ātrums?</li></ul><p>Piemēram, durvju ražošanai ideāli piemēroti būs 1325 sērijas modeļi (darba laukums 1300×2500 mm), kas atbilst standarta durvju sagatavēm. Savukārt hobijiem un nelieliem suvenīriem pilnīgi pietiks ar kompaktiem modeļiem kā 0404 Mini, kuri, neskatoties uz savu izmēru, ir aprīkoti ar jaudīgām vārpstām.</p></div></div></section>
+
+<div class="cta-band"><h2 class="sr">Gatavi uzsākt? <span>Sazinieties</span> ar mums</h2><p class="sr sr-d1">Mēs palīdzēsim izvēlēties piemērotāko CNC frēzi tieši Jūsu vajadzībām un budžetam.</p><div class="cta-band-btns sr sr-d2"><a href="#kontakti" class="btn-red-lg">Pieteikt Konsultāciju<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-ghost-lg">Apmeklēt Bratus.lv ↗</a></div></div>
+
+<footer id="kontakti"><div class="footer-main"><div class="footer-col"><h4>SIA Bratus — Oficiālais Wattsan Pārstāvis</h4><p>Oficiālais Wattsan iekārtu izplatītājs Latvijā. Piegādājam, uzstādām un nodrošinām tehnisko atbalstu un garantiju visā reģionā.</p></div><div class="footer-col"><h4>Ātrās Saites</h4><ul><li><a href="#katalogs">CNC Frēžu Katalogs</a></li><li><a href="#prieksrocibas">Priekšrocības</a></li><li><a href="#info">Informācija</a></li><li><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">Bratus.lv</a></li></ul></div><div class="footer-col"><h4>Kontakti</h4><div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A2 2 0 0 1 2.11 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81A2 2 0 0 1 7.36 10.7L6.09 11.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+37124424434">+371 24 424 434</a></div><div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sales@bratus.lv">sales@bratus.lv</a></div><div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dārznieku iela 42, Ķekava, LV-2123</span></div><div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Reģ. nr. 40203628316</span></div></div></div><div class="footer-bottom"><p>© <span id="year"></span> SIA Bratus (cncfrezes.lv). Visas tiesības aizsargātas.</p><p>Apmeklējiet mūsu pilno katalogu: <a href="https://bratus.lv" target="_blank" rel="noopener noreferrer">bratus.lv</a></p></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});},{threshold:0.06});document.querySelectorAll('.sr').forEach(el=>obs.observe(el));</script></body>
 </html>
