@@ -33,11 +33,22 @@ img{display:block;max-width:100%}
 .breadcrumb-current{color:var(--ink);font-weight:500}
 .product-hero{max-width:var(--max);margin:0 auto;padding:32px var(--gutter);display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
 @media(max-width:860px){.product-hero{grid-template-columns:1fr;gap:28px}}
-.product-gallery{position:relative}
-.gallery-main{width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--bg2);border:1px solid var(--border);padding:24px}
-.gallery-thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
+.product-gallery{position:relative;user-select:none;-webkit-user-select:none}
+.gallery-stage{position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--border);touch-action:pan-y pinch-zoom}
+.gallery-track{display:flex;transition:transform .4s var(--ease);will-change:transform}
+.gallery-slide{flex:0 0 100%;min-width:100%;aspect-ratio:4/3;object-fit:contain;padding:24px;background:var(--bg2)}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:all .2s;opacity:.85}
+.gallery-arrow:hover{opacity:1;border-color:var(--accent);box-shadow:0 4px 20px rgba(230,60,50,.15)}
+.gallery-arrow svg{width:16px;height:16px;color:var(--ink)}
+.gallery-arrow.prev{left:12px}.gallery-arrow.next{right:12px}
+.gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.gallery-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .25s;padding:0}
+.gallery-dot.active{background:var(--accent);transform:scale(1.3)}
+.gallery-thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.gallery-thumbs::-webkit-scrollbar{display:none}
 .gallery-thumb{width:72px;height:54px;object-fit:cover;border:1px solid var(--border);cursor:pointer;opacity:.55;transition:all .2s;flex-shrink:0}
 .gallery-thumb:hover,.gallery-thumb.active{opacity:1;border-color:var(--accent)}
+@media(max-width:700px){.gallery-arrow{display:none}.gallery-slide{padding:12px}}
 .product-info{display:flex;flex-direction:column;gap:16px}
 .product-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(230,60,50,.1);border:1px solid rgba(230,60,50,.25);padding:5px 12px;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;width:fit-content}
 .product-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 2s ease infinite}
@@ -97,13 +108,28 @@ footer{background:var(--ink);color:#fff;padding:48px var(--gutter) 24px;margin-t
 <div class="breadcrumb"><div class="breadcrumb-inner"><a href="index.html">Sākums</a><span>/</span><a href="index.html#katalogs">CNC Frēzes</a><span>/</span><span class="breadcrumb-current">Wattsan 1325 M1</span></div></div>
 <section class="product-hero">
 <div class="product-gallery sr">
-<img id="mainImg" class="gallery-main" src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 M1">
-<div class="gallery-thumbs"><img class="gallery-thumb active" src="https://wattsan.com/wp-content/uploads/M1-1325.png" onclick="setGallery(this)" alt="Wattsan 1325 M1">
-<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-1-result.webp" onclick="setGallery(this)" alt="Wattsan 1325 M1">
-<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-2-result.webp" onclick="setGallery(this)" alt="Wattsan 1325 M1">
-<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-6-result.webp" onclick="setGallery(this)" alt="Wattsan 1325 M1">
-<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/router-masonry-gallery-1325-m1-3.webp" onclick="setGallery(this)" alt="Wattsan 1325 M1">
-<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/router-masonry-gallery-1325-m1-4.webp" onclick="setGallery(this)" alt="Wattsan 1325 M1"></div>
+<div class="gallery-stage">
+<div class="gallery-track" id="1325_m1_track"><img class="gallery-slide" src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 M1">
+<img class="gallery-slide" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-1-result.webp" alt="Wattsan 1325 M1">
+<img class="gallery-slide" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-2-result.webp" alt="Wattsan 1325 M1">
+<img class="gallery-slide" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-6-result.webp" alt="Wattsan 1325 M1">
+<img class="gallery-slide" src="https://wattsan.com/wp-content/uploads/router-masonry-gallery-1325-m1-3.webp" alt="Wattsan 1325 M1">
+<img class="gallery-slide" src="https://wattsan.com/wp-content/uploads/router-masonry-gallery-1325-m1-4.webp" alt="Wattsan 1325 M1"></div>
+<button class="gallery-arrow prev" id="1325_m1_prev" aria-label="Iepriekšējā"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+<button class="gallery-arrow next" id="1325_m1_next" aria-label="Nākamā"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>
+<div class="gallery-dots" id="1325_m1_dots"><button class="gallery-dot active" data-idx="0" aria-label="Bilde 1"></button>
+<button class="gallery-dot" data-idx="1" aria-label="Bilde 2"></button>
+<button class="gallery-dot" data-idx="2" aria-label="Bilde 3"></button>
+<button class="gallery-dot" data-idx="3" aria-label="Bilde 4"></button>
+<button class="gallery-dot" data-idx="4" aria-label="Bilde 5"></button>
+<button class="gallery-dot" data-idx="5" aria-label="Bilde 6"></button></div>
+<div class="gallery-thumbs" id="1325_m1_thumbs"><img class="gallery-thumb active" src="https://wattsan.com/wp-content/uploads/M1-1325.png" data-idx="0" alt="Wattsan 1325 M1">
+<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-1-result.webp" data-idx="1" alt="Wattsan 1325 M1">
+<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-2-result.webp" data-idx="2" alt="Wattsan 1325 M1">
+<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/1325-m1-milling-machine-mansonry-gallery-6-result.webp" data-idx="3" alt="Wattsan 1325 M1">
+<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/router-masonry-gallery-1325-m1-3.webp" data-idx="4" alt="Wattsan 1325 M1">
+<img class="gallery-thumb" src="https://wattsan.com/wp-content/uploads/router-masonry-gallery-1325-m1-4.webp" data-idx="5" alt="Wattsan 1325 M1"></div>
 </div>
 <div class="product-info sr d1">
 <div class="product-badge"><span class="product-badge-dot"></span>M1 Sērija · Nozares standarts</div>
@@ -159,4 +185,4 @@ footer{background:var(--ink);color:#fff;padding:48px var(--gutter) 24px;margin-t
 </div>
 </section>
 <footer><div class="footer-grid"><div class="footer-brand"><img src="https://wattsan.com/wp-content/uploads/wattsan_logo-1.svg" alt="Wattsan"><p>Wattsan — profesionālas CNC iekārtas ar 21 gada pieredzi. Oficiālais pārstāvis Latvijā: SIA Bratus.</p></div><div class="footer-col"><h5>Iekārtas</h5><a href="index.html#katalogs">CNC Frēzes</a><a href="https://wattsan.com/products/laser-machines/" target="_blank">CO2 Lāzeri</a><a href="https://wattsan.com/products/fiber-metal-cutters/" target="_blank">Metāla griešana</a></div><div class="footer-col"><h5>Kontakti</h5><a href="tel:+37124424434">+371 24 424 434</a><a href="mailto:sales@bratus.lv">sales@bratus.lv</a><a href="https://bratus.lv" target="_blank">bratus.lv</a><p style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:8px">Dārznieku iela 42, Ķekava</p></div></div><div class="footer-bar"><p>© <span id="yr"></span> SIA <a href="https://bratus.lv" target="_blank">Bratus</a> · Wattsan oficiālais pārstāvis Latvijā · Reģ. nr. 40203628316</p></div></footer>
-<script>document.getElementById("yr").textContent=new Date().getFullYear();const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}});},{threshold:.05});document.querySelectorAll(".sr").forEach(el=>o.observe(el));function setGallery(img){document.getElementById("mainImg").src=img.src;document.querySelectorAll(".gallery-thumb").forEach(t=>t.classList.remove("active"));img.classList.add("active")}</script></body></html>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}});},{threshold:.05});document.querySelectorAll(".sr").forEach(el=>o.observe(el));function initGallery(id){const track=document.getElementById(id);if(!track)return;const slides=track.children;const total=slides.length;let idx=0;const dots=document.querySelectorAll("#"+id.replace("track","dots")+" .gallery-dot");const thumbs=document.querySelectorAll("#"+id.replace("track","thumbs")+" .gallery-thumb");function go(n){idx=(n+total)%total;track.style.transform="translateX(-"+idx*100+"%)";dots.forEach((d,i)=>{d.classList.toggle("active",i===idx)});thumbs.forEach((t,i)=>{t.classList.toggle("active",i===idx);if(i===idx)t.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})})}document.getElementById(id.replace("track","prev")).addEventListener("click",()=>go(idx-1));document.getElementById(id.replace("track","next")).addEventListener("click",()=>go(idx+1));dots.forEach((d,i)=>{d.addEventListener("click",()=>go(i))});thumbs.forEach((t,i)=>{t.addEventListener("click",()=>go(i))});let ts=0;track.parentElement.addEventListener("touchstart",e=>{ts=e.touches[0].clientX},{passive:true});track.parentElement.addEventListener("touchend",e=>{const d=ts-e.changedTouches[0].clientX;if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1)}},{passive:true});document.addEventListener("keydown",e=>{const g=e.target.closest(".product-gallery");if(g&&g.contains(track)){if(e.key==="ArrowLeft")go(idx-1);if(e.key==="ArrowRight")go(idx+1)}})}document.querySelectorAll(".gallery-track").forEach(t=>initGallery(t.id))</script></body></html>

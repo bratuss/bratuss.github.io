@@ -308,11 +308,22 @@ img{display:block;max-width:100%}
 .breadcrumb-current{color:var(--ink);font-weight:500}
 .product-hero{max-width:var(--max);margin:0 auto;padding:32px var(--gutter);display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
 @media(max-width:860px){.product-hero{grid-template-columns:1fr;gap:28px}}
-.product-gallery{position:relative}
-.gallery-main{width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--bg2);border:1px solid var(--border);padding:24px}
-.gallery-thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
+.product-gallery{position:relative;user-select:none;-webkit-user-select:none}
+.gallery-stage{position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--border);touch-action:pan-y pinch-zoom}
+.gallery-track{display:flex;transition:transform .4s var(--ease);will-change:transform}
+.gallery-slide{flex:0 0 100%;min-width:100%;aspect-ratio:4/3;object-fit:contain;padding:24px;background:var(--bg2)}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:all .2s;opacity:.85}
+.gallery-arrow:hover{opacity:1;border-color:var(--accent);box-shadow:0 4px 20px rgba(230,60,50,.15)}
+.gallery-arrow svg{width:16px;height:16px;color:var(--ink)}
+.gallery-arrow.prev{left:12px}.gallery-arrow.next{right:12px}
+.gallery-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.gallery-dot{width:8px;height:8px;border-radius:50%;background:var(--border);border:none;cursor:pointer;transition:all .25s;padding:0}
+.gallery-dot.active{background:var(--accent);transform:scale(1.3)}
+.gallery-thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.gallery-thumbs::-webkit-scrollbar{display:none}
 .gallery-thumb{width:72px;height:54px;object-fit:cover;border:1px solid var(--border);cursor:pointer;opacity:.55;transition:all .2s;flex-shrink:0}
 .gallery-thumb:hover,.gallery-thumb.active{opacity:1;border-color:var(--accent)}
+@media(max-width:700px){.gallery-arrow{display:none}.gallery-slide{padding:12px}}
 .product-info{display:flex;flex-direction:column;gap:16px}
 .product-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(230,60,50,.1);border:1px solid rgba(230,60,50,.25);padding:5px 12px;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;width:fit-content}
 .product-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 2s ease infinite}
@@ -378,7 +389,7 @@ SUBNAV = '<div class="nav-sub"><div class="nav-sub-inner"><span>CNC Frēzes:</sp
 
 FOOTER = '''<footer><div class="footer-grid"><div class="footer-brand"><img src="https://wattsan.com/wp-content/uploads/wattsan_logo-1.svg" alt="Wattsan"><p>Wattsan — profesionālas CNC iekārtas ar 21 gada pieredzi. Oficiālais pārstāvis Latvijā: SIA Bratus.</p></div><div class="footer-col"><h5>Iekārtas</h5><a href="index.html#katalogs">CNC Frēzes</a><a href="https://wattsan.com/products/laser-machines/" target="_blank">CO2 Lāzeri</a><a href="https://wattsan.com/products/fiber-metal-cutters/" target="_blank">Metāla griešana</a></div><div class="footer-col"><h5>Kontakti</h5><a href="tel:+37124424434">+371 24 424 434</a><a href="mailto:sales@bratus.lv">sales@bratus.lv</a><a href="https://bratus.lv" target="_blank">bratus.lv</a><p style="font-size:.68rem;color:rgba(255,255,255,.3);margin-top:8px">Dārznieku iela 42, Ķekava</p></div></div><div class="footer-bar"><p>© <span id="yr"></span> SIA <a href="https://bratus.lv" target="_blank">Bratus</a> · Wattsan oficiālais pārstāvis Latvijā · Reģ. nr. 40203628316</p></div></footer>'''
 
-JS = '<script>document.getElementById("yr").textContent=new Date().getFullYear();const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}});},{threshold:.05});document.querySelectorAll(".sr").forEach(el=>o.observe(el));function setGallery(img){document.getElementById("mainImg").src=img.src;document.querySelectorAll(".gallery-thumb").forEach(t=>t.classList.remove("active"));img.classList.add("active")}</script>'
+JS = '<script>document.getElementById("yr").textContent=new Date().getFullYear();const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");o.unobserve(x.target)}});},{threshold:.05});document.querySelectorAll(".sr").forEach(el=>o.observe(el));function initGallery(id){const track=document.getElementById(id);if(!track)return;const slides=track.children;const total=slides.length;let idx=0;const dots=document.querySelectorAll("#"+id.replace("track","dots")+" .gallery-dot");const thumbs=document.querySelectorAll("#"+id.replace("track","thumbs")+" .gallery-thumb");function go(n){idx=(n+total)%total;track.style.transform="translateX(-"+idx*100+"%)";dots.forEach((d,i)=>{d.classList.toggle("active",i===idx)});thumbs.forEach((t,i)=>{t.classList.toggle("active",i===idx);if(i===idx)t.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"})})}document.getElementById(id.replace("track","prev")).addEventListener("click",()=>go(idx-1));document.getElementById(id.replace("track","next")).addEventListener("click",()=>go(idx+1));dots.forEach((d,i)=>{d.addEventListener("click",()=>go(i))});thumbs.forEach((t,i)=>{t.addEventListener("click",()=>go(i))});let ts=0;track.parentElement.addEventListener("touchstart",e=>{ts=e.touches[0].clientX},{passive:true});track.parentElement.addEventListener("touchend",e=>{const d=ts-e.changedTouches[0].clientX;if(Math.abs(d)>50){d>0?go(idx+1):go(idx-1)}},{passive:true});document.addEventListener("keydown",e=>{const g=e.target.closest(".product-gallery");if(g&&g.contains(track)){if(e.key==="ArrowLeft")go(idx-1);if(e.key==="ArrowRight")go(idx+1)}})}document.querySelectorAll(".gallery-track").forEach(t=>initGallery(t.id))</script>'
 
 SVG_ICONS = {
     'Kompakts dizains': '<path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-1V5a2 2 0 00-2-2H8a2 2 0 00-2 2v2H3z"/>',
@@ -426,16 +437,19 @@ def get_cat(slug):
 
 def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_imgs, key_specs, desc_text, features, tech_specs, materials):
     """Generate complete HTML product page."""
-    # Gallery
-    thumbs = '\n'.join([
-        f'<img class="gallery-thumb{"" if i==0 else " active"}" src="{img}" onclick="setGallery(this)" alt="Wattsan {model_name}">'
-        if i == 0 else
-        f'<img class="gallery-thumb" src="{img}" onclick="setGallery(this)" alt="Wattsan {model_name}">'
-        for i, img in enumerate(gallery_imgs)
-    ])
+    # Gallery - swipeable carousel with arrows + dots
+    gallery_id = model_name.replace(' ','_').lower()
+    slides = '\n'.join([f'<img class="gallery-slide" src="{img}" alt="Wattsan {model_name}">' for img in gallery_imgs])
+    dots = '\n'.join([f'<button class="gallery-dot{" active" if i==0 else ""}" data-idx="{i}" aria-label="Bilde {i+1}"></button>' for i in range(len(gallery_imgs))])
+    thumbs = '\n'.join([f'<img class="gallery-thumb{" active" if i==0 else ""}" src="{img}" data-idx="{i}" alt="Wattsan {model_name}">' for i, img in enumerate(gallery_imgs)])
     gallery_html = f'''<div class="product-gallery sr">
-<img id="mainImg" class="gallery-main" src="{gallery_imgs[0]}" alt="Wattsan {model_name}">
-<div class="gallery-thumbs">{thumbs}</div>
+<div class="gallery-stage">
+<div class="gallery-track" id="{gallery_id}_track">{slides}</div>
+<button class="gallery-arrow prev" id="{gallery_id}_prev" aria-label="Iepriekšējā"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg></button>
+<button class="gallery-arrow next" id="{gallery_id}_next" aria-label="Nākamā"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>
+</div>
+<div class="gallery-dots" id="{gallery_id}_dots">{dots}</div>
+<div class="gallery-thumbs" id="{gallery_id}_thumbs">{thumbs}</div>
 </div>'''
 
     # Key specs
