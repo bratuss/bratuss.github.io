@@ -432,7 +432,8 @@ SVG_ICONS = {
     'default': '<polyline points="20 6 9 17 4 12"/>',
 }
 
-HEAD1 = '<!DOCTYPE html><html lang="lv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
+HEAD1 = '<!DOCTYPE html><html lang="lv"><head><meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Untitleddesign.png?v=1769505279"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
 HEAD2 = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>'
 HEAD3 = '</style></head><body>'
 HTML_END = '</body></html>'
