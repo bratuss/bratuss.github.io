@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="lv">
+<html lang="lv" data-i18n-title="home.title" data-i18n-desc="home.meta_desc">
 <head>
   <meta name="google-site-verification" content="In81ZLj73wh6JOFeV3IWZ5DH0LLQeVidL-4yQK8OAHI" />
   <meta charset="UTF-8">
@@ -69,6 +69,12 @@ nav{height:64px;display:flex;align-items:center;justify-content:space-between;pa
 .nav-cta .btn-outline-sm:hover{color:var(--dark);border-color:rgba(0,0,0,.3)}
 .btn-red-sm{padding:9px 20px;background:var(--red);font-size:0.82rem;font-weight:600;color:#fff;transition:all .2s;white-space:nowrap;border:none;cursor:pointer}
 .btn-red-sm:hover{background:var(--red-dark)}
+
+/* LANGUAGE SWITCHER */
+.lang-switcher{display:flex;align-items:center;gap:2px;margin-left:6px}
+.lang-switcher a{font-size:0.72rem;font-weight:600;padding:3px 8px;color:var(--gray-light);border-radius:3px;transition:all .2s;letter-spacing:.04em}
+.lang-switcher a:hover{color:var(--dark);background:rgba(0,0,0,.04)}
+.lang-switcher a.active{color:var(--red);background:rgba(230,60,50,.08)}
 
 @media(max-width:860px){.nav-links{display:none}}
 
@@ -364,11 +370,11 @@ footer{background:var(--dark);color:#fff;padding:0}
 <body>
 
 <!-- SKIP LINK -->
-<a href="#main-content" class="skip-link">Pāriet uz galveno saturu</a>
+<a href="#main-content" class="skip-link" data-i18n="common.skip_link">Pāriet uz galveno saturu</a>
 
 <!-- SITE HEADER -->
 <header id="site-header">
-<div class="annbar">Bratus.lv — Wattsan oficiālais pārstāvis Latvijā. Piegāde, uzstādīšana un garantijas apkalpošana. <a href="tel:+37124424434">Zvaniet +371 24 424 434</a></div>
+<div class="annbar"><span data-i18n="common.annbar">Bratus.lv — Wattsan oficiālais pārstāvis Latvijā. Piegāde, uzstādīšana un garantijas apkalpošana.</span> <a href="tel:+37124424434" data-i18n="common.annbar_call">Zvaniet +371 24 424 434</a></div>
 
 <nav role="navigation" aria-label="Galvenā navigācija">
   <a href="/" class="nav-logo" aria-label="CNC Frēzes Latvijā — Sākums">
@@ -377,16 +383,20 @@ footer{background:var(--dark);color:#fff;padding:0}
     <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Untitleddesign.png?v=1769505279" alt="Bratus logotips" width="80" height="22" style="height:22px">
   </a>
   <ul class="nav-links">
-    <li><a href="#katalogs">CNC Frēzes</a></li>
-    <li><a href="#prieksrocibas">Priekšrocības</a></li>
-    <li><a href="#ka-izveleties">Kā Izvēlēties</a></li>
-    <li><a href="#faq">BUJ</a></li>
+    <li><a href="#katalogs" data-i18n="common.nav_catalog">CNC Frēzes</a></li>
+    <li><a href="#prieksrocibas" data-i18n="common.nav_advantages">Priekšrocības</a></li>
+    <li><a href="#ka-izveleties" data-i18n="common.nav_guide">Kā Izvēlēties</a></li>
+    <li><a href="#faq" data-i18n="common.nav_faq">BUJ</a></li>
     <li><a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer">Bratus.lv ↗</a></li>
-    <li><a href="#kontakti">Kontakti</a></li>
+    <li><a href="#kontakti" data-i18n="common.nav_contacts">Kontakti</a></li>
   </ul>
   <div class="nav-cta">
-    <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-outline-sm">Oficiālais pārstāvis ↗</a>
-    <a href="#kontakti" class="btn-red-sm" toolname="requestConsultation" tooldescription="Pieteikt bezmaksas konsultāciju par CNC frēzes izvēli">Pieteikt</a>
+    <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-outline-sm" data-i18n="common.nav_official">Oficiālais pārstāvis ↗</a>
+    <a href="#kontakti" class="btn-red-sm" data-i18n="common.nav_cta">Pieteikt</a>
+    <div class="lang-switcher" role="group" aria-label="Valodas izvēle">
+      <a href="#" data-lang="lv" class="active" data-i18n="common.lang_lv">LV</a>
+      <a href="#" data-lang="en" data-i18n="common.lang_en">EN</a>
+    </div>
   </div>
 </nav>
 </header>
@@ -402,12 +412,12 @@ footer{background:var(--dark);color:#fff;padding:0}
   </figure>
   <div class="hero-overlay"></div>
   <div class="hero-inner">
-    <div class="hero-badge">Oficiālais Wattsan Pārstāvis Latvijā</div>
-    <h1 class="hero-h1" id="hero-heading"><span>CNC Frēzes</span><span class="accent">jūsu ražošanai</span></h1>
-    <p class="hero-sub">Vienīgais oficiālais Wattsan CNC iekārtu izplatītājs Latvijā. <strong>17 profesionāli modeļi</strong> — no kompaktām galda frēzēm līdz industriālām lielformāta iekārtām ar 4 asīm. Piegāde, uzstādīšana un serviss visā Latvijā.</p>
+    <div class="hero-badge" data-i18n="home.hero_badge">Oficiālais Wattsan Pārstāvis Latvijā</div>
+    <h1 class="hero-h1" id="hero-heading"><span data-i18n="home.hero_h1_line1">CNC Frēzes</span><span class="accent" data-i18n="home.hero_h1_line2">jūsu ražošanai</span></h1>
+    <p class="hero-sub" data-i18n="home.hero_sub">Vienīgais oficiālais Wattsan CNC iekārtu izplatītājs Latvijā. <strong>17 profesionāli modeļi</strong> — no kompaktām galda frēzēm līdz industriālām lielformāta iekārtām ar 4 asīm. Piegāde, uzstādīšana un serviss visā Latvijā.</p>
     <div class="hero-btns">
-      <a href="#katalogs" class="btn-red-lg" toolname="browseCatalog" tooldescription="Apskatīt visus 17 CNC frēžu modeļus">Apskatīt Modeļus<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-ghost-lg">Pilnais Katalogs<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+      <a href="#katalogs" class="btn-red-lg" data-i18n="home.hero_btn_models">Apskatīt Modeļus<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" class="btn-ghost-lg" data-i18n="home.hero_btn_catalog">Pilnais Katalogs<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
     </div>
   </div>
 </section>
@@ -417,28 +427,28 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section" id="katalogs" aria-labelledby="catalog-heading">
   <div class="section-max">
     <div class="sr">
-      <div class="tag">CNC Frēžu Katalogs</div>
-      <h2 class="section-title" id="catalog-heading">Izvēlies savu <span class="r">Wattsan</span> modeli</h2>
-      <p class="section-subtitle">17 modeļi — no kompaktām galda frēzēm līdz industriālām lielformāta iekārtām ar 4 asīm un dubultvārpstām. Visi modeļi pieejami ar piegādi visā Latvijā.</p>
+      <div class="tag" data-i18n="home.catalog_tag">CNC Frēžu Katalogs</div>
+      <h2 class="section-title" id="catalog-heading" data-i18n-html="home.catalog_title">Izvēlies savu <span class="r">Wattsan</span> modeli</h2>
+      <p class="section-subtitle" data-i18n="home.catalog_sub">17 modeļi — no kompaktām galda frēzēm līdz industriālām lielformāta iekārtām ar 4 asīm un dubultvārpstām. Visi modeļi pieejami ar piegādi visā Latvijā.</p>
     </div>
     <div class="catalog-grid">
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">MINI</div><img src="https://wattsan.com/wp-content/uploads/titul-0404-mini-zip.png" alt="Wattsan 0404 MINI CNC frēze — kompakta galda iekārta" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 0404 MINI — galda CNC frēze ar 1.5 kW vārpstu</figcaption></figure><div class="cnc-meta">Galda CNC · 1.5 kW</div><h3 class="cnc-title" id="model-0404">0404 MINI</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">400 × 400 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">NcStudio</dd></div><div><dt class="lbl">Svars</dt><dd class="val">92 kg</dd></div></dl><a href="/wattsan-0404/" class="btn-outline" aria-label="Skatīt vairāk par 0404 MINI">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">MINI</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 0609 MINI CNC frēze — kompakta iekārta ar 900×600 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 0609 MINI — kompakta CNC frēze ar DSP A11 kontrolieri</figcaption></figure><div class="cnc-meta">Kompakta · 2.2 kW</div><h3 class="cnc-title" id="model-0609">0609 MINI</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">900 × 600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">DSP A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">135 kg</dd></div></dl><a href="/wattsan-0609/" class="btn-outline" aria-label="Skatīt vairāk par 0609 MINI">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 6090 A1 CNC frēze — 3 asu iekārta ar 2.2 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 6090 A1 — CNC frēze ar RichAuto A11 kontrolieri</figcaption></figure><div class="cnc-meta">3 Asis · 2.2 kW</div><h3 class="cnc-title" id="model-6090-a1">6090 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">900 × 600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">400 kg</dd></div></dl><a href="/wattsan-a1-6090/" class="btn-outline" aria-label="Skatīt vairāk par 6090 A1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 6090 M1 CNC frēze — pastiprināta iekārta ar 2.2 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 6090 M1 — pastiprināta CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Pastiprināta · 2.2 kW</div><h3 class="cnc-title" id="model-6090-m1">6090 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">900 × 600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">500 kg</dd></div></dl><a href="/wattsan-m1-6090/" class="btn-outline" aria-label="Skatīt vairāk par 6090 M1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan 1313 A1 CNC frēze — koka frēze ar 1300×1300 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1313 A1 — koka CNC frēze ar 2.2 kW vārpstu</figcaption></figure><div class="cnc-meta">Koka frēze · 2.2 kW</div><h3 class="cnc-title" id="model-1313-a1">1313 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 1300 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">540 kg</dd></div></dl><a href="/wattsan-a1-1313/" class="btn-outline" aria-label="Skatīt vairāk par 1313 A1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan 1313 M1 CNC frēze — profesionāla iekārta ar 3.2 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1313 M1 — profesionāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Profesionāla · 3.2 kW</div><h3 class="cnc-title" id="model-1313-m1">1313 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 1300 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">650 kg</dd></div></dl><a href="/wattsan-m1-1313/" class="btn-outline" aria-label="Skatīt vairāk par 1313 M1">Skatīt vairāk →</a></div>
-<div class="cnc-card featured sr"><figure class="cnc-img-wrap"><div class="cnc-badge">POPULĀRĀKAIS</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan 1313 M1 S4 CNC frēze — vispopulārākais modelis ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1313 M1 S4 — vispieprasītākā CNC frēze Latvijā</figcaption></figure><div class="cnc-meta">Jaudīga · 4.5 kW</div><h3 class="cnc-title" id="model-1313-m1-s4">1313 M1 S4</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 1300 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">DSP A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1000 kg</dd></div></dl><a href="/wattsan-1313/" class="btn-outline" aria-label="Skatīt vairāk par 1313 M1 S4 — populārākais modelis">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 A1 CNC frēze — pilna izmēra iekārta ar 1300×2500 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 A1 — pilna izmēra CNC frēze ar 3 kW vārpstu</figcaption></figure><div class="cnc-meta">Pilna izmēra · 3 kW</div><h3 class="cnc-title" id="model-1325-a1">1325 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">720 kg</dd></div></dl><a href="/wattsan-a1-1325/" class="btn-outline" aria-label="Skatīt vairāk par 1325 A1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 M1 CNC frēze — profesionāla iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 M1 — profesionāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Profesionāla · 4.5 kW</div><h3 class="cnc-title" id="model-1325-m1">1325 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">880 kg</dd></div></dl><a href="/wattsan-1325/" class="btn-outline" aria-label="Skatīt vairāk par 1325 M1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">4 ASIS</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 RD M1 CNC frēze — 4 asu rotācijas iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 RD M1 — 4 asu CNC frēze ar rotācijas ierīci</figcaption></figure><div class="cnc-meta">Rotācijas · 4.5 kW</div><h3 class="cnc-title" id="model-1325-rd">1325 RD M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A18</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1550 kg</dd></div></dl><a href="/wattsan-m1-1325-rd/" class="btn-outline" aria-label="Skatīt vairāk par 1325 RD M1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M3</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 M3 CNC frēze — industriāla iekārta ar NC Studio 8 kontrolieri" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 M3 — industriāla CNC frēze ar NC Studio 8</figcaption></figure><div class="cnc-meta">Industriāla · 4.5 kW</div><h3 class="cnc-title" id="model-1325-m3">1325 M3</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">NC Studio 8</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1260 kg</dd></div></dl><a href="/wattsan-m3-1325/" class="btn-outline" aria-label="Skatīt vairāk par 1325 M3">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 A1 CNC frēze — kvadrātveida iekārta ar 1600×1600 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 A1 — kvadrātveida CNC frēze ar 3.2 kW vārpstu</figcaption></figure><div class="cnc-meta">Kvadrātveida · 3.2 kW</div><h3 class="cnc-title" id="model-1616-a1">1616 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">620 kg</dd></div></dl><a href="/wattsan-a1-1616/" class="btn-outline" aria-label="Skatīt vairāk par 1616 A1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 M1 CNC frēze — profesionāla kvadrātveida iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 M1 — profesionāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Profesionāla · 4.5 kW</div><h3 class="cnc-title" id="model-1616-m1">1616 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">730 kg</dd></div></dl><a href="/wattsan-m1-1616/" class="btn-outline" aria-label="Skatīt vairāk par 1616 M1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M2</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 M2 CNC frēze — universāla iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 M2 — universāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Universāla · 4.5 kW</div><h3 class="cnc-title" id="model-1616-m2">1616 M2</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1130 kg</dd></div></dl><a href="/wattsan-1616/" class="btn-outline" aria-label="Skatīt vairāk par 1616 M2">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">2× VĀRPSTA</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 M1 S2 X CNC frēze — divu vārpstu iekārta ar 2×4.5 kW jaudu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 M1 S2 X — CNC frēze ar dubultvārpstu sistēmu</figcaption></figure><div class="cnc-meta">Divas vārpstas · 2×4.5 kW</div><h3 class="cnc-title" id="model-1616-s2x">1616 M1 S2 X</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto F7324</dd></div><div><dt class="lbl">Svars</dt><dd class="val">840 kg</dd></div></dl><a href="/wattsan-m1-s2-x/" class="btn-outline" aria-label="Skatīt vairāk par 1616 M1 S2 X">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">LIELJAUDAS</div><img src="https://wattsan.com/wp-content/uploads/m12030plus2-2.png" alt="Wattsan 2030 M1 CNC frēze — lielformāta iekārta ar 2000×3000 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 2030 M1 — lielformāta industriāla CNC frēze ar 6 kW vārpstu</figcaption></figure><div class="cnc-meta">Lielformāta · 6 kW</div><h3 class="cnc-title" id="model-2030">2030 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">2000 × 3000 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1140 kg</dd></div></dl><a href="/wattsan-2030/" class="btn-outline" aria-label="Skatīt vairāk par 2030 M1">Skatīt vairāk →</a></div>
-<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">MAX IZMĒRS</div><img src="https://wattsan.com/wp-content/uploads/20402-1-1-1-1.png" alt="Wattsan 2040 M1 CNC frēze — lielākā iekārta ar 2000×4000 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 2040 M1 — maksimālā izmēra industriāla CNC frēze</figcaption></figure><div class="cnc-meta">Industriāla · 6 kW</div><h3 class="cnc-title" id="model-2040">2040 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">2000 × 4000 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1370 kg</dd></div></dl><a href="/wattsan-2040/" class="btn-outline" aria-label="Skatīt vairāk par 2040 M1">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">MINI</div><img src="https://wattsan.com/wp-content/uploads/titul-0404-mini-zip.png" alt="Wattsan 0404 MINI CNC frēze — kompakta galda iekārta" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 0404 MINI — galda CNC frēze ar 1.5 kW vārpstu</figcaption></figure><div class="cnc-meta">Galda CNC · 1.5 kW</div><h3 class="cnc-title" id="model-0404">0404 MINI</h3><dl class="cnc-specs"><div><dt class="lbl" data-i18n="home.spec_workarea">Darba laukums</dt><dd class="val">400 × 400 mm</dd></div><div><dt class="lbl" data-i18n="home.spec_controller">Kontrolieris</dt><dd class="val">NcStudio</dd></div><div><dt class="lbl" data-i18n="home.spec_weight">Svars</dt><dd class="val">92 kg</dd></div></dl><a href="/wattsan-0404/" class="btn-outline" aria-label="Skatīt vairāk par 0404 MINI" data-i18n="home.card_view" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">MINI</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 0609 MINI CNC frēze — kompakta iekārta ar 900×600 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 0609 MINI — kompakta CNC frēze ar DSP A11 kontrolieri</figcaption></figure><div class="cnc-meta">Kompakta · 2.2 kW</div><h3 class="cnc-title" id="model-0609">0609 MINI</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">900 × 600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">DSP A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">135 kg</dd></div></dl><a href="/wattsan-0609/" class="btn-outline" aria-label="Skatīt vairāk par 0609 MINI" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 6090 A1 CNC frēze — 3 asu iekārta ar 2.2 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 6090 A1 — CNC frēze ar RichAuto A11 kontrolieri</figcaption></figure><div class="cnc-meta">3 Asis · 2.2 kW</div><h3 class="cnc-title" id="model-6090-a1">6090 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">900 × 600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">400 kg</dd></div></dl><a href="/wattsan-a1-6090/" class="btn-outline" aria-label="Skatīt vairāk par 6090 A1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/titul-0609-mini-zip.png" alt="Wattsan 6090 M1 CNC frēze — pastiprināta iekārta ar 2.2 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 6090 M1 — pastiprināta CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Pastiprināta · 2.2 kW</div><h3 class="cnc-title" id="model-6090-m1">6090 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">900 × 600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">500 kg</dd></div></dl><a href="/wattsan-m1-6090/" class="btn-outline" aria-label="Skatīt vairāk par 6090 M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan 1313 A1 CNC frēze — koka frēze ar 1300×1300 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1313 A1 — koka CNC frēze ar 2.2 kW vārpstu</figcaption></figure><div class="cnc-meta">Koka frēze · 2.2 kW</div><h3 class="cnc-title" id="model-1313-a1">1313 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 1300 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">540 kg</dd></div></dl><a href="/wattsan-a1-1313/" class="btn-outline" aria-label="Skatīt vairāk par 1313 A1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan 1313 M1 CNC frēze — profesionāla iekārta ar 3.2 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1313 M1 — profesionāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Profesionāla · 3.2 kW</div><h3 class="cnc-title" id="model-1313-m1">1313 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 1300 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">650 kg</dd></div></dl><a href="/wattsan-m1-1313/" class="btn-outline" aria-label="Skatīt vairāk par 1313 M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card featured sr"><figure class="cnc-img-wrap"><div class="cnc-badge">POPULĀRĀKAIS</div><img src="https://wattsan.com/wp-content/uploads/M1-1313-S4.png" alt="Wattsan 1313 M1 S4 CNC frēze — vispopulārākais modelis ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1313 M1 S4 — vispieprasītākā CNC frēze Latvijā</figcaption></figure><div class="cnc-meta">Jaudīga · 4.5 kW</div><h3 class="cnc-title" id="model-1313-m1-s4">1313 M1 S4</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 1300 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">DSP A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1000 kg</dd></div></dl><a href="/wattsan-1313/" class="btn-outline" aria-label="Skatīt vairāk par 1313 M1 S4 — populārākais modelis" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 A1 CNC frēze — pilna izmēra iekārta ar 1300×2500 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 A1 — pilna izmēra CNC frēze ar 3 kW vārpstu</figcaption></figure><div class="cnc-meta">Pilna izmēra · 3 kW</div><h3 class="cnc-title" id="model-1325-a1">1325 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">720 kg</dd></div></dl><a href="/wattsan-a1-1325/" class="btn-outline" aria-label="Skatīt vairāk par 1325 A1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 M1 CNC frēze — profesionāla iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 M1 — profesionāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Profesionāla · 4.5 kW</div><h3 class="cnc-title" id="model-1325-m1">1325 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">880 kg</dd></div></dl><a href="/wattsan-1325/" class="btn-outline" aria-label="Skatīt vairāk par 1325 M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">4 ASIS</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 RD M1 CNC frēze — 4 asu rotācijas iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 RD M1 — 4 asu CNC frēze ar rotācijas ierīci</figcaption></figure><div class="cnc-meta">Rotācijas · 4.5 kW</div><h3 class="cnc-title" id="model-1325-rd">1325 RD M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A18</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1550 kg</dd></div></dl><a href="/wattsan-m1-1325-rd/" class="btn-outline" aria-label="Skatīt vairāk par 1325 RD M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M3</div><img src="https://wattsan.com/wp-content/uploads/M1-1325.png" alt="Wattsan 1325 M3 CNC frēze — industriāla iekārta ar NC Studio 8 kontrolieri" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1325 M3 — industriāla CNC frēze ar NC Studio 8</figcaption></figure><div class="cnc-meta">Industriāla · 4.5 kW</div><h3 class="cnc-title" id="model-1325-m3">1325 M3</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1300 × 2500 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">NC Studio 8</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1260 kg</dd></div></dl><a href="/wattsan-m3-1325/" class="btn-outline" aria-label="Skatīt vairāk par 1325 M3" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">A1</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 A1 CNC frēze — kvadrātveida iekārta ar 1600×1600 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 A1 — kvadrātveida CNC frēze ar 3.2 kW vārpstu</figcaption></figure><div class="cnc-meta">Kvadrātveida · 3.2 kW</div><h3 class="cnc-title" id="model-1616-a1">1616 A1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">620 kg</dd></div></dl><a href="/wattsan-a1-1616/" class="btn-outline" aria-label="Skatīt vairāk par 1616 A1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M1</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 M1 CNC frēze — profesionāla kvadrātveida iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 M1 — profesionāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Profesionāla · 4.5 kW</div><h3 class="cnc-title" id="model-1616-m1">1616 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">730 kg</dd></div></dl><a href="/wattsan-m1-1616/" class="btn-outline" aria-label="Skatīt vairāk par 1616 M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">M2</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 M2 CNC frēze — universāla iekārta ar 4.5 kW vārpstu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 M2 — universāla CNC frēze ar RichAuto A11</figcaption></figure><div class="cnc-meta">Universāla · 4.5 kW</div><h3 class="cnc-title" id="model-1616-m2">1616 M2</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1130 kg</dd></div></dl><a href="/wattsan-1616/" class="btn-outline" aria-label="Skatīt vairāk par 1616 M2" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">2× VĀRPSTA</div><img src="https://wattsan.com/wp-content/uploads/m2-1616-titul-result.webp" alt="Wattsan 1616 M1 S2 X CNC frēze — divu vārpstu iekārta ar 2×4.5 kW jaudu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 1616 M1 S2 X — CNC frēze ar dubultvārpstu sistēmu</figcaption></figure><div class="cnc-meta">Divas vārpstas · 2×4.5 kW</div><h3 class="cnc-title" id="model-1616-s2x">1616 M1 S2 X</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">1600 × 1600 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto F7324</dd></div><div><dt class="lbl">Svars</dt><dd class="val">840 kg</dd></div></dl><a href="/wattsan-m1-s2-x/" class="btn-outline" aria-label="Skatīt vairāk par 1616 M1 S2 X" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">LIELJAUDAS</div><img src="https://wattsan.com/wp-content/uploads/m12030plus2-2.png" alt="Wattsan 2030 M1 CNC frēze — lielformāta iekārta ar 2000×3000 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 2030 M1 — lielformāta industriāla CNC frēze ar 6 kW vārpstu</figcaption></figure><div class="cnc-meta">Lielformāta · 6 kW</div><h3 class="cnc-title" id="model-2030">2030 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">2000 × 3000 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1140 kg</dd></div></dl><a href="/wattsan-2030/" class="btn-outline" aria-label="Skatīt vairāk par 2030 M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
+<div class="cnc-card sr"><figure class="cnc-img-wrap"><div class="cnc-badge">MAX IZMĒRS</div><img src="https://wattsan.com/wp-content/uploads/20402-1-1-1-1.png" alt="Wattsan 2040 M1 CNC frēze — lielākā iekārta ar 2000×4000 mm darba laukumu" width="400" height="300" loading="lazy"><figcaption style="display:none">Wattsan 2040 M1 — maksimālā izmēra industriāla CNC frēze</figcaption></figure><div class="cnc-meta">Industriāla · 6 kW</div><h3 class="cnc-title" id="model-2040">2040 M1</h3><dl class="cnc-specs"><div><dt class="lbl">Darba laukums</dt><dd class="val">2000 × 4000 mm</dd></div><div><dt class="lbl">Kontrolieris</dt><dd class="val">RichAuto A11</dd></div><div><dt class="lbl">Svars</dt><dd class="val">1370 kg</dd></div></dl><a href="/wattsan-2040/" class="btn-outline" aria-label="Skatīt vairāk par 2040 M1" data-i18n="home.card_view">Skatīt vairāk →</a></div>
     </div>
     <div class="catalog-more sr">
       <a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border:1.5px solid rgba(0,0,0,.12);font-size:0.92rem;font-weight:500;color:var(--dark);transition:all .25s var(--ease)">Pilnais Katalogs Bratus.lv<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -450,15 +460,15 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section section-dark" aria-labelledby="stats-heading">
   <div class="section-max">
     <div class="sr" style="text-align:center;margin-bottom:40px">
-      <div class="tag">Kāpēc Mēs</div>
-      <h2 class="section-title" id="stats-heading" style="text-align:center">Vienīgais <span class="r">oficiālais</span> Wattsan pārstāvis Latvijā</h2>
-      <p class="section-subtitle" style="margin:0 auto">Ar vairāk nekā 20 gadu pieredzi iekārtu tirdzniecībā esam izvēlējušies Wattsan kā labāko cenas un kvalitātes attiecību CNC tirgū. Esam personīgi testējuši katru modeli un zinām, kas nepieciešams Jūsu ražošanai.</p>
+      <div class="tag" data-i18n="home.stats_tag">Kāpēc Mēs</div>
+      <h2 class="section-title" id="stats-heading" style="text-align:center" data-i18n-html="home.stats_title">Vienīgais <span class="r">oficiālais</span> Wattsan pārstāvis Latvijā</h2>
+      <p class="section-subtitle" style="margin:0 auto" data-i18n="home.stats_sub">Ar vairāk nekā 20 gadu pieredzi iekārtu tirdzniecībā esam izvēlējušies Wattsan kā labāko cenas un kvalitātes attiecību CNC tirgū. Esam personīgi testējuši katru modeli un zinām, kas nepieciešams Jūsu ražošanai.</p>
     </div>
     <div class="stats-grid sr">
-      <div class="stat-item"><div class="stat-number">20k+</div><div class="stat-label">Pārdotas iekārtas pasaulē</div></div>
-      <div class="stat-item"><div class="stat-number">21</div><div class="stat-label">Gadu pieredze nozarē</div></div>
-      <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label">Valstis ar Wattsan klātbūtni</div></div>
-      <div class="stat-item"><div class="stat-number">185</div><div class="stat-label">Inženieri Wattsan komandā</div></div>
+      <div class="stat-item"><div class="stat-number">20k+</div><div class="stat-label" data-i18n="home.stats_sold">Pārdotas iekārtas pasaulē</div></div>
+      <div class="stat-item"><div class="stat-number">21</div><div class="stat-label" data-i18n="home.stats_experience">Gadu pieredze nozarē</div></div>
+      <div class="stat-item"><div class="stat-number">100+</div><div class="stat-label" data-i18n="home.stats_countries">Valstis ar Wattsan klātbūtni</div></div>
+      <div class="stat-item"><div class="stat-number">185</div><div class="stat-label" data-i18n="home.stats_engineers">Inženieri Wattsan komandā</div></div>
     </div>
   </div>
 </section>
@@ -467,32 +477,32 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section" id="prieksrocibas" aria-labelledby="advantages-heading">
   <div class="section-max">
     <div class="sr">
-      <div class="tag">Kāpēc Wattsan</div>
-      <h2 class="section-title" id="advantages-heading">Jūsu <span class="r">ražošanas</span> priekšrocības</h2>
-      <p class="section-subtitle">Mēs nodrošinām ne tikai iekārtas, bet arī pilnu atbalsta ciklu — no izvēles līdz servisam. Kā oficiālais pārstāvis garantējam labāko cenu un servisu Latvijā.</p>
+      <div class="tag" data-i18n="home.adv_tag">Kāpēc Wattsan</div>
+      <h2 class="section-title" id="advantages-heading" data-i18n-html="home.adv_title">Jūsu <span class="r">ražošanas</span> priekšrocības</h2>
+      <p class="section-subtitle" data-i18n="home.adv_sub">Mēs nodrošinām ne tikai iekārtas, bet arī pilnu atbalsta ciklu — no izvēles līdz servisam. Kā oficiālais pārstāvis garantējam labāko cenu un servisu Latvijā.</p>
     </div>
     <div class="adv-grid">
       <div class="adv-card sr">
         <div class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h4 id="adv-garantija">Oficiālā Garantija 24 Mēneši</h4>
-        <p>Pilna ražotāja garantija ar servisu Latvijā. Kā oficiālie Wattsan pārstāvji nodrošinām garantijas remontu, rezerves daļas un tehnisko diagnostiku uz vietas.</p>
+        <h4 id="adv-garantija" data-i18n="home.adv1_title">Oficiālā Garantija 24 Mēneši</h4>
+        <p data-i18n="home.adv1_text">Pilna ražotāja garantija ar servisu Latvijā. Kā oficiālie Wattsan pārstāvji nodrošinām garantijas remontu, rezerves daļas un tehnisko diagnostiku uz vietas.</p>
       </div>
       <div class="adv-card sr sr-d1">
         <div class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h4 id="adv-apmacibas">Apmācības Iekļautas</h4>
-        <p>Personāla apmācība darbā ar CNC iekārtu, programmatūras iestatīšana, darba instrumentu izvēle un konsultācijas — viss iekļauts cenā.</p>
+        <h4 id="adv-apmacibas" data-i18n="home.adv2_title">Apmācības Iekļautas</h4>
+        <p data-i18n="home.adv2_text">Personāla apmācība darbā ar CNC iekārtu, programmatūras iestatīšana, darba instrumentu izvēle un konsultācijas — viss iekļauts cenā.</p>
       </div>
       <div class="adv-card sr sr-d2">
         <div class="adv-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8V4l8-2 8 2v6.2c0 7.3-8 11.8-8 11.8z"/></svg></div>
-        <h4 id="adv-kvalitate">Uzticamība & Kvalitāte</h4>
-        <p>Rūpnieciskas klases komponentes no pasaules vadošajiem ražotājiem — HIWIN lineārās vadīklas, Yaskawa servomotori, HQD vārpstas — nodrošina ilgmūžību un precizitāti.</p>
+        <h4 id="adv-kvalitate" data-i18n="home.adv3_title">Uzticamība & Kvalitāte</h4>
+        <p data-i18n="home.adv3_text">Rūpnieciskas klases komponentes no pasaules vadošajiem ražotājiem — HIWIN lineārās vadīklas, Yaskawa servomotori, HQD vārpstas — nodrošina ilgmūžību un precizitāti.</p>
       </div>
     </div>
     <div class="proof-bar sr" style="margin-top:32px">
-      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Oficiālais izplatītājs</span>
-      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8V4l8-2 8 2v6.2c0 7.3-8 11.8-8 11.8z"/></svg> CE sertificētas iekārtas</span>
-      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Bezmaksas piegāde visā Latvijā</span>
-      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 98% klientu apmierinātība</span>
+      <span data-i18n="home.proof1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Oficiālais izplatītājs</span>
+      <span data-i18n="home.proof2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8V4l8-2 8 2v6.2c0 7.3-8 11.8-8 11.8z"/></svg> CE sertificētas iekārtas</span>
+      <span data-i18n="home.proof3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Bezmaksas piegāde visā Latvijā</span>
+      <span data-i18n="home.proof4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 98% klientu apmierinātība</span>
     </div>
   </div>
 </section>
@@ -501,18 +511,18 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section section-gray" id="ka-izveleties" aria-labelledby="guide-heading">
   <div class="info-inner">
     <div class="info-block sr">
-      <div class="tag">Salīdzinājums</div>
-      <h3 id="guide-heading">Wattsan CNC Frēžu Sēriju Salīdzinājums</h3>
-      <p>Zemāk esošā tabula palīdzēs ātri salīdzināt galvenās Wattsan sērijas un izvēlēties savām vajadzībām atbilstošāko. Pilnu specifikāciju sarakstu atradīsiet katra modeļa lapā.</p>
+      <div class="tag" data-i18n="home.compare_tag">Salīdzinājums</div>
+      <h3 id="guide-heading" data-i18n="home.compare_title">Wattsan CNC Frēžu Sēriju Salīdzinājums</h3>
+      <p data-i18n="home.compare_desc">Zemāk esošā tabula palīdzēs ātri salīdzināt galvenās Wattsan sērijas un izvēlēties savām vajadzībām atbilstošāko. Pilnu specifikāciju sarakstu atradīsiet katra modeļa lapā.</p>
       <div style="overflow-x:auto">
       <table class="compare-table">
         <thead>
           <tr>
-            <th scope="col">Sērija</th>
-            <th scope="col">Darba laukums</th>
-            <th scope="col">Jauda</th>
-            <th scope="col">Piemērots</th>
-            <th scope="col">Cenas kategorija</th>
+            <th scope="col" data-i18n="home.table_series">Sērija</th>
+            <th scope="col" data-i18n="home.table_area">Darba laukums</th>
+            <th scope="col" data-i18n="home.table_power">Jauda</th>
+            <th scope="col" data-i18n="home.table_suitable">Piemērots</th>
+            <th scope="col" data-i18n="home.table_price">Cenas kategorija</th>
           </tr>
         </thead>
         <tbody>
@@ -586,7 +596,7 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section" aria-labelledby="tldr-heading" style="padding-bottom:0">
   <div class="section-max">
     <div class="tldr" id="kopsavilkums">
-      <strong id="tldr-heading">Īsumā par CNC Frēzēm Latvijā:</strong>
+      <strong id="tldr-heading" data-i18n="home.tldr_heading">Īsumā par CNC Frēzēm Latvijā:</strong>
       <ul>
         <li><strong>Oficiālais Wattsan pārstāvis</strong> — vienīgais sertificētais izplatītājs Latvijā ar 20+ gadu pieredzi iekārtu tirdzniecībā</li>
         <li><strong>17 modeļi noliktavā</strong> — no kompaktām galda CNC frēzēm (0404 MINI) līdz industriālām lielformāta iekārtām (2040 M1)</li>
@@ -601,26 +611,26 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section" id="faq" aria-labelledby="faq-heading">
   <div class="info-inner">
     <div class="sr">
-      <div class="tag">Biežāk Uzdotie Jautājumi</div>
-      <h2 class="section-title" id="faq-heading">BUJ par <span class="r">CNC Frēzēm</span></h2>
-      <p class="section-subtitle">Atbildes uz visbiežāk uzdotajiem jautājumiem par Wattsan CNC frēžu iegādi un ekspluatāciju Latvijā.</p>
+      <div class="tag" data-i18n="home.faq_tag">Biežāk Uzdotie Jautājumi</div>
+      <h2 class="section-title" id="faq-heading" data-i18n-html="home.faq_title">BUJ par <span class="r">CNC Frēzēm</span></h2>
+      <p class="section-subtitle" data-i18n="home.faq_sub">Atbildes uz visbiežāk uzdotajiem jautājumiem par Wattsan CNC frēžu iegādi un ekspluatāciju Latvijā.</p>
     </div>
     <div class="faq-list">
       <div class="faq-item sr">
-        <div class="faq-q">Kādu CNC frēzi izvēlēties iesācējam?</div>
-        <div class="faq-a">Iesācējiem iesakām Wattsan 0404 MINI vai 0609 MINI modeļus — tie ir kompakti, viegli lietojami un aprīkoti ar intuitīvu vadības sistēmu. Šie modeļi ir ideāli piemēroti hobijiem, mācību vajadzībām un nelielu produktu ražošanai. Pēc pirmo iemaņu apgūšanas varēsiet viegli pāriet uz lielākiem modeļiem.</div>
+        <div class="faq-q" data-i18n="home.faq1_q">Kādu CNC frēzi izvēlēties iesācējam?</div>
+        <div class="faq-a" data-i18n="home.faq1_a">Iesācējiem iesakām Wattsan 0404 MINI vai 0609 MINI modeļus — tie ir kompakti, viegli lietojami un aprīkoti ar intuitīvu vadības sistēmu. Šie modeļi ir ideāli piemēroti hobijiem, mācību vajadzībām un nelielu produktu ražošanai. Pēc pirmo iemaņu apgūšanas varēsiet viegli pāriet uz lielākiem modeļiem.</div>
       </div>
       <div class="faq-item sr">
-        <div class="faq-q">Vai jūs nodrošināt CNC frēzes piegādi visā Latvijā?</div>
-        <div class="faq-a">Jā, SIA Bratus nodrošina bezmaksas piegādi visā Latvijas teritorijā visām Wattsan CNC frēzēm. Papildus piedāvājam profesionālu iekārtas uzstādīšanu, personāla apmācību un tehnisko atbalstu. Piegādes laiks parasti ir 5–15 darba dienas atkarībā no modeļa pieejamības.</div>
+        <div class="faq-q" data-i18n="home.faq2_q">Vai jūs nodrošināt CNC frēzes piegādi visā Latvijā?</div>
+        <div class="faq-a" data-i18n="home.faq2_a">Jā, SIA Bratus nodrošina bezmaksas piegādi visā Latvijas teritorijā visām Wattsan CNC frēzēm. Papildus piedāvājam profesionālu iekārtas uzstādīšanu, personāla apmācību un tehnisko atbalstu. Piegādes laiks parasti ir 5–15 darba dienas atkarībā no modeļa pieejamības.</div>
       </div>
       <div class="faq-item sr">
-        <div class="faq-q">Kāda ir Wattsan CNC frēžu garantija?</div>
-        <div class="faq-a">Visām Wattsan CNC frēzēm tiek nodrošināta oficiālā ražotāja garantija 24 mēnešu apmērā. Kā oficiālais Wattsan pārstāvis Latvijā, mēs nodrošinām pilnu garantijas servisu uz vietas — remontu, rezerves daļu piegādi un tehnisko diagnostiku. Rezerves daļas vienmēr ir pieejamas mūsu noliktavā.</div>
+        <div class="faq-q" data-i18n="home.faq3_q">Kāda ir Wattsan CNC frēžu garantija?</div>
+        <div class="faq-a" data-i18n="home.faq3_a">Visām Wattsan CNC frēzēm tiek nodrošināta oficiālā ražotāja garantija 24 mēnešu apmērā. Kā oficiālais Wattsan pārstāvis Latvijā, mēs nodrošinām pilnu garantijas servisu uz vietas — remontu, rezerves daļu piegādi un tehnisko diagnostiku. Rezerves daļas vienmēr ir pieejamas mūsu noliktavā.</div>
       </div>
       <div class="faq-item sr">
-        <div class="faq-q">Vai CNC frēze ir piemērota manam biznesam?</div>
-        <div class="faq-a">CNC frēze ir piemērota plašam biznesa pielietojumam — mēbeļu ražošanai, durvju un kāpņu izgatavošanai, reklāmas elementu ražošanai, suvenīru un dekoru izgatavošanai. Mūsu komanda palīdzēs izvēlēties Jūsu vajadzībām un budžetam atbilstošāko modeli. Piedāvājam bezmaksas konsultāciju un iespēju apskatīt iekārtas klātienē.</div>
+        <div class="faq-q" data-i18n="home.faq4_q">Vai CNC frēze ir piemērota manam biznesam?</div>
+        <div class="faq-a" data-i18n="home.faq4_a">CNC frēze ir piemērota plašam biznesa pielietojumam — mēbeļu ražošanai, durvju un kāpņu izgatavošanai, reklāmas elementu ražošanai, suvenīru un dekoru izgatavošanai. Mūsu komanda palīdzēs izvēlēties Jūsu vajadzībām un budžetam atbilstošāko modeli. Piedāvājam bezmaksas konsultāciju un iespēju apskatīt iekārtas klātienē.</div>
       </div>
     </div>
   </div>
@@ -630,27 +640,27 @@ footer{background:var(--dark);color:#fff;padding:0}
 <section class="section section-gray" aria-labelledby="process-heading">
   <div class="info-inner">
     <div class="sr">
-      <div class="tag">Pasūtīšanas Process</div>
-      <h2 class="section-title" id="process-heading">Kā iegādāties <span class="r">CNC frēzi</span> 5 soļos</h2>
-      <p class="section-subtitle">Vienkāršs un caurskatāms iegādes process — no pirmās konsultācijas līdz iekārtas uzstādīšanai Jūsu ražotnē.</p>
+      <div class="tag" data-i18n="home.process_tag">Pasūtīšanas Process</div>
+      <h2 class="section-title" id="process-heading" data-i18n-html="home.process_title">Kā iegādāties <span class="r">CNC frēzi</span> 5 soļos</h2>
+      <p class="section-subtitle" data-i18n="home.process_sub">Vienkāršs un caurskatāms iegādes process — no pirmās konsultācijas līdz iekārtas uzstādīšanai Jūsu ražotnē.</p>
     </div>
     <ol class="steps-list">
-      <li class="sr"><strong>Konsultācija</strong>Sazinieties ar mums pa tālruni <a href="tel:+37124424434" style="color:var(--red);font-weight:500">+371 24 424 434</a> vai e-pastu <a href="mailto:sales@bratus.lv" style="color:var(--red);font-weight:500">sales@bratus.lv</a>. Mūsu speciālisti izvērtēs Jūsu vajadzības un ieteiks piemērotāko modeli.</li>
-      <li class="sr sr-d1"><strong>Piedāvājums</strong>Sagatavosim detalizētu komerciālo piedāvājumu ar iekārtas specifikāciju, piegādes termiņiem un kopējām izmaksām.</li>
-      <li class="sr sr-d2"><strong>Pasūtījuma apstiprināšana</strong>Pēc piedāvājuma saskaņošanas noslēdzam līgumu un Jūs veicat priekšapmaksu. Mēs uzsākam iekārtas sagatavošanu.</li>
-      <li class="sr sr-d3"><strong>Piegāde un uzstādīšana</strong>Piegādājam iekārtu uz Jūsu norādīto adresi, veicam profesionālu uzstādīšanu un pieslēgšanu.</li>
-      <li class="sr"><strong>Apmācība un atbalsts</strong>Apmācām Jūsu personālu darbam ar CNC frēzi un nodrošinām pastāvīgu tehnisko atbalstu visā garantijas periodā un pēc tā.</li>
+      <li class="sr"><strong data-i18n="home.step1_title">Konsultācija</strong><span data-i18n="home.step1_text">Sazinieties ar mums pa tālruni <a href="tel:+37124424434" style="color:var(--red);font-weight:500">+371 24 424 434</a> vai e-pastu <a href="mailto:sales@bratus.lv" style="color:var(--red);font-weight:500">sales@bratus.lv</a>. Mūsu speciālisti izvērtēs Jūsu vajadzības un ieteiks piemērotāko modeli.</li>
+      <li class="sr sr-d1"><strong data-i18n="home.step2_title">Piedāvājums</strong><span data-i18n="home.step2_text">Sagatavosim detalizētu komerciālo piedāvājumu ar iekārtas specifikāciju, piegādes termiņiem un kopējām izmaksām.</li>
+      <li class="sr sr-d2"><strong data-i18n="home.step3_title">Pasūtījuma apstiprināšana</strong><span data-i18n="home.step3_text">Pēc piedāvājuma saskaņošanas noslēdzam līgumu un Jūs veicat priekšapmaksu. Mēs uzsākam iekārtas sagatavošanu.</li>
+      <li class="sr sr-d3"><strong data-i18n="home.step4_title">Piegāde un uzstādīšana</strong><span data-i18n="home.step4_text">Piegādājam iekārtu uz Jūsu norādīto adresi, veicam profesionālu uzstādīšanu un pieslēgšanu.</li>
+      <li class="sr"><strong data-i18n="home.step5_title">Apmācība un atbalsts</strong><span data-i18n="home.step5_text">Apmācām Jūsu personālu darbam ar CNC frēzi un nodrošinām pastāvīgu tehnisko atbalstu visā garantijas periodā un pēc tā.</li>
     </ol>
   </div>
 </section>
 
 <!-- CTA BAND -->
 <div class="cta-band" id="pieteikt">
-  <h2 class="sr">Gatavi uzsākt? <span>Sazinieties</span> ar mums</h2>
-  <p class="sr sr-d1">Mēs palīdzēsim izvēlēties piemērotāko CNC frēzi tieši Jūsu vajadzībām un budžetam. Bezmaksas konsultācija — atbildam 24h laikā.</p>
+  <h2 class="sr" data-i18n-html="home.cta_title">Gatavi uzsākt? <span>Sazinieties</span> ar mums</h2>
+  <p class="sr sr-d1" data-i18n="home.cta_sub">Mēs palīdzēsim izvēlēties piemērotāko CNC frēzi tieši Jūsu vajadzībām un budžetam. Bezmaksas konsultācija — atbildam 24h laikā.</p>
   <div class="cta-band-btns sr sr-d2">
-    <a href="#kontakti" class="btn-red-lg" toolname="requestConsultation" tooldescription="Pieteikt bezmaksas konsultāciju par CNC frēzes iegādi">Pieteikt Konsultāciju<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-ghost-lg">Apmeklēt Bratus.lv ↗</a>
+    <a href="#kontakti" class="btn-red-lg" data-i18n="home.cta_btn">Pieteikt Konsultāciju<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="https://bratus.lv/" target="_blank" rel="noopener noreferrer" class="btn-ghost-lg" data-i18n="home.cta_visit">Apmeklēt Bratus.lv ↗</a>
   </div>
 </div>
 
@@ -661,46 +671,47 @@ footer{background:var(--dark);color:#fff;padding:0}
 <footer id="kontakti" role="contentinfo" aria-label="Kontaktu informācija">
   <div class="footer-main">
     <div class="footer-col">
-      <h4>SIA Bratus — Oficiālais Wattsan Pārstāvis</h4>
-      <p>Oficiālais Wattsan iekārtu izplatītājs Latvijā. Piegādājam, uzstādām un nodrošinām tehnisko atbalstu un garantiju visā reģionā. Vienīgais sertificētais Wattsan partneris Baltijā.</p>
-      <p style="margin-top:8px"><strong style="color:rgba(255,255,255,.55)">Darba laiks:</strong> P.–Pk. 9:00–18:00</p>
+      <h4 data-i18n="common.footer_company">SIA Bratus — Oficiālais Wattsan Pārstāvis</h4>
+      <p data-i18n="common.footer_desc">Oficiālais Wattsan iekārtu izplatītājs Latvijā. Piegādājam, uzstādām un nodrošinām tehnisko atbalstu un garantiju visā reģionā. Vienīgais sertificētais Wattsan partneris Baltijā.</p>
+      <p style="margin-top:8px"><strong style="color:rgba(255,255,255,.55)" data-i18n="common.footer_hours_label">Darba laiks:</strong> <span data-i18n="common.footer_hours_val">P.–Pk. 9:00–18:00</span></p>
     </div>
     <div class="footer-col">
-      <h4>Ātrās Saites</h4>
+      <h4 data-i18n="common.footer_quick">Ātrās Saites</h4>
       <ul>
-        <li><a href="#katalogs">CNC Frēžu Katalogs</a></li>
-        <li><a href="#prieksrocibas">Priekšrocības</a></li>
-        <li><a href="#ka-izveleties">Kā Izvēlēties</a></li>
-        <li><a href="#faq">BUJ</a></li>
-        <li><a href="#kopsavilkums">Kopsavilkums</a></li>
+        <li><a href="#katalogs" data-i18n="common.footer_quick_catalog">CNC Frēžu Katalogs</a></li>
+        <li><a href="#prieksrocibas" data-i18n="common.footer_quick_advantages">Priekšrocības</a></li>
+        <li><a href="#ka-izveleties" data-i18n="common.footer_quick_guide">Kā Izvēlēties</a></li>
+        <li><a href="#faq" data-i18n="common.footer_quick_faq">BUJ</a></li>
+        <li><a href="#kopsavilkums" data-i18n="common.footer_quick_summary">Kopsavilkums</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Kontakti</h4>
+      <h4 data-i18n="common.footer_contacts">Kontakti</h4>
       <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A2 2 0 0 1 2.11 4h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81A2 2 0 0 1 7.36 10.7L6.09 11.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+37124424434">+371 24 424 434</a></div>
       <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sales@bratus.lv">sales@bratus.lv</a></div>
-      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dārznieku iela 42, Ķekava, LV-2123</span></div>
-      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Reģ. nr. 40203628316</span></div>
-      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>PVN Maksātājs</span></div>
+      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="common.footer_address">Dārznieku iela 42, Ķekava, LV-2123</span></div>
+      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span data-i18n="common.footer_reg">Reģ. nr. 40203628316</span></div>
+      <div class="c-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="common.footer_vat">PVN Maksātājs</span></div>
     </div>
     <div class="footer-col">
-      <h4>Informācija</h4>
+      <h4 data-i18n="common.footer_info">Informācija</h4>
       <ul>
-        <li><a href="https://bratus.lv/pages/par-mums" target="_blank" rel="noopener noreferrer">Par Mums</a></li>
-        <li><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer">Pilnais Katalogs</a></li>
-        <li><a href="https://bratus.lv/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Privātuma Politika</a></li>
-        <li><a href="https://bratus.lv/policies/terms-of-service" target="_blank" rel="noopener noreferrer">Lietošanas Noteikumi</a></li>
-        <li><a href="https://wattsan.com/" target="_blank" rel="noopener noreferrer">Wattsan.com ↗</a></li>
+        <li><a href="https://bratus.lv/pages/par-mums" target="_blank" rel="noopener noreferrer" data-i18n="common.footer_info_about">Par Mums</a></li>
+        <li><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" rel="noopener noreferrer" data-i18n="common.footer_info_catalog">Pilnais Katalogs</a></li>
+        <li><a href="https://bratus.lv/policies/privacy-policy" target="_blank" rel="noopener noreferrer" data-i18n="common.footer_info_privacy">Privātuma Politika</a></li>
+        <li><a href="https://bratus.lv/policies/terms-of-service" target="_blank" rel="noopener noreferrer" data-i18n="common.footer_info_terms">Lietošanas Noteikumi</a></li>
+        <li><a href="https://wattsan.com/" target="_blank" rel="noopener noreferrer" data-i18n="common.footer_info_wattsan">Wattsan.com ↗</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© <span id="year"></span> SIA Bratus (cncfrezes.lv). Visas tiesības aizsargātas. Pēdējo reizi atjaunināts: 2026. gada 15. jūlijā.</p>
-    <p>Apmeklējiet mūsu pilno katalogu: <a href="https://bratus.lv" target="_blank" rel="noopener noreferrer">Bratus.lv</a> | <a href="https://bratus.lv/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Privātuma Politika</a> | <a href="https://bratus.lv/policies/terms-of-service" target="_blank" rel="noopener noreferrer">Lietošanas Noteikumi</a></p>
-    <p style="font-size:0.7rem;margin-top:2px;color:rgba(255,255,255,.2)">Mājaslapas izstrādi un SEO optimizāciju veica <a href="https://latseo.com" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.35)">latseo.com</a></p>
+    <p data-i18n="common.footer_copyright">© <span id="year"></span> SIA Bratus (cncfrezes.lv). Visas tiesības aizsargātas. Pēdējo reizi atjaunināts: 2026. gada 15. jūlijā.</p>
+    <p><span data-i18n="common.footer_visit">Apmeklējiet mūsu pilno katalogu:</span> <a href="https://bratus.lv" target="_blank" rel="noopener noreferrer">Bratus.lv</a> | <a href="https://bratus.lv/policies/privacy-policy" target="_blank" rel="noopener noreferrer">Privātuma Politika</a> | <a href="https://bratus.lv/policies/terms-of-service" target="_blank" rel="noopener noreferrer">Lietošanas Noteikumi</a></p>
+    <p style="font-size:0.7rem;margin-top:2px;color:rgba(255,255,255,.2)"><span data-i18n="common.footer_credit">Mājaslapas izstrādi un SEO optimizāciju veica</span> <a href="https://latseo.com" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.35)">latseo.com</a></p>
   </div>
 </footer>
 
+<script defer src="/i18n/i18n.js"></script>
 <script defer>
 document.getElementById('year').textContent = new Date().getFullYear();
 const obs = new IntersectionObserver(entries => {
