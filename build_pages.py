@@ -500,7 +500,7 @@ def make_page(fn, meta_title, meta_desc, canonical, model_name, badge, gallery_i
 <h1 class="product-title">Wattsan <strong>{model_name}</strong></h1>
 <p class="product-subtitle">{desc_text.split('.')[0]}.</p>
 {specs_html}
-<div class="product-cta"><a href="#kontakti" class="btn-primary">Pieprasīt piedāvājumu</a><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" class="btn-outline">Skatīt bratus.lv ↗</a></div>
+<div class="product-cta"><a href="https://bratus.lv/pages/contact" class="btn-primary">Pieprasīt piedāvājumu</a><a href="https://bratus.lv/pages/cnc-frezes" target="_blank" class="btn-outline">Skatīt bratus.lv ↗</a></div>
 </div>
 </section>
 <section class="section" style="background:var(--bg2);border-top:1px solid var(--border)">
