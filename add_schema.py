@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Add JSON-LD Schema.org structured data to all pages for SEO."""
 import os, re, glob, json
 
@@ -245,7 +245,7 @@ homepage_schema = {
             "telephone": "+37124424434",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Dārznieku iela 42",
+                "streetAddress": "Pliederu iela 22",
                 "addressLocality": "Ķekava",
                 "postalCode": "LV-2123",
                 "addressCountry": "LV"

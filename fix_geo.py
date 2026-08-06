@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """GEO optimization script for all 17 CNC product pages.
 Applies comprehensive fixes to reach ~95+ GEO score."""
 
@@ -79,7 +79,7 @@ def fix_page(filepath):
       "telephone": "+37124424434",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Dārznieku iela 42",
+        "streetAddress": "Pliederu iela 22",
         "addressLocality": "Ķekava",
         "postalCode": "LV-2123",
         "addressCountry": "LV"
